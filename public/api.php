@@ -8,29 +8,26 @@ require __DIR__ . '/../vendor/autoload.php';
 $app = new \Slim\App;
 
 //GET Request 
-$app->get('/get/{databasename}/{function}/{userinfo}', function (Request $request, Response $response, array $args) 
+$app->get('/get/{databasename}/{selectCount}/{tableCount}/{whereCount}', function (Request $request, Response $response, array $args) 
 {
 	//Maakt variablen uit info van de URL
-	$function = $request->getAttribute('function');
-	$userinfo = $request->getAttribute('userinfo');
+	$tableCount = $request->getAttribute('tableCount');
+	$selectCount = $request->getAttribute('selectCount');
+	$whereCount = $request->getAttribute('whereCount');
 	$databaseName = $request->getAttribute('databasename');
-	$table = "";
 
 	require "get.php";
 
-	//Kijkt als function overheen komt
-	if($function == "GetData" )
-	{
-		$g = new GET();
-		$g->GetData($databaseName, $table);	
-	}
+	$g = new GET();
+	$g->GetData($databaseName, $selectCount, $tableCount, $whereCount);	
+
 });
 
 //DELETE Request 
-$app->delete('/delete/{userinfo}', function (Request $request, Response $response) 
+$app->delete('/delete/{userInfo}', function (Request $request, Response $response) 
 {	
 	//Maakt variablen uit info van de URL
-	$userinfo = $request->getAttribute('userinfo');
+	$userInfo = $request->getAttribute('userInfo');
 	$databaseName = $request->getAttribute('databasename');
 	$table = "";
 
@@ -45,10 +42,10 @@ $app->delete('/delete/{userinfo}', function (Request $request, Response $respons
 });
 
 //PUT Request 
-$app->put('/put/{userinfo}/{remove}', function (Request $request, Response $response) 
+$app->put('/put/{userInfo}/{remove}', function (Request $request, Response $response) 
 {
 	//Maakt variablen uit info van de URL
-	$userinfo = $request->getAttribute('userinfo');
+	$userInfo = $request->getAttribute('userInfo');
 	$databaseName = $request->getAttribute('databasename');
 	$table = "";
 
@@ -63,10 +60,10 @@ $app->put('/put/{userinfo}/{remove}', function (Request $request, Response $resp
 });
 
 //POST Request 
-$app->post('/post/{userinfo}', function (Request $request, Response $response) 
+$app->post('/post/{userInfo}', function (Request $request, Response $response) 
 {
 	//Maakt variablen uit info van de URL
-	$userinfo = $request->getAttribute('userinfo');
+	$userInfo = $request->getAttribute('userInfo');
 	$databaseName = $request->getAttribute('databasename');
 	$table = "";
 
@@ -79,9 +76,6 @@ $app->post('/post/{userinfo}', function (Request $request, Response $response)
 		$g->InsertData($databaseName, $table);	
 	}	
 });
-
-
-echo "BRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR";
 
 $app->run();
 ?>

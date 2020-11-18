@@ -1,0 +1,2 @@
+http://localhost/TrumpAPI/public/api.php/get/trumpapi/ID^Link/Memes/Source|imgur
+http://localhost/TrumpAPI/public/api.php/get/trumpapi/Link/Memes/Source|imgur^ID|3160267

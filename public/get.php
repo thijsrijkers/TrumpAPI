@@ -1,7 +1,8 @@
 <?php
-class GET {
+class GET 
+{
  
-    function GetData($databaseName, $table) 
+    function GetData($databaseName, $selectCount, $tableCount, $whereCount) 
     {
         if($databaseName) 
         {		
@@ -15,14 +16,77 @@ class GET {
             } 
             else
             {
-                ///
-                ///
-                /// QUERY STATEMENT
-                ///
-                ///
+                $selectArray = explode("^", $selectCount);
+                $tableArray = explode("^", $tableCount);
+                
+                if($whereCount != 66)
+                {
+                    $whereArray = explode("^", $whereCount);
+                }
+
+                $selectString = "SELECT ";
+                $sql = "";
+
+                if(isset($selectArray))
+                {
+                    foreach($selectArray as $item)
+                    {
+                        $selectString = "".$selectString." ".$item.", ";
+                    }
+
+                    $fromString = substr($selectString, 0, -2);
+                    $fromString.= " FROM ";
+
+                    if(isset($tableArray))
+                    {
+                        foreach($tableArray as $item)
+                        {
+                            $fromString = "".$fromString." ".$item.", ";
+                        }
+
+                        $whereString = substr($fromString, 0, -2);
+
+                        if(isset($whereArray))
+                        {
+                            $whereString.= " WHERE ";
+
+                            foreach($whereArray as $item)
+                            {
+                                $WhereClause = explode("|", $item);
+                                $whereString = "".$whereString."".$WhereClause[0]." = '$WhereClause[1]' AND ";
+                            }
+
+                            $whereString = substr($whereString, 0, -5);
+                        }
+
+                        $sql = $whereString;
+                        $sql.= ";";
+                    }
+                    else
+                    {
+                        header('500 Internal Server Error', true, 404);
+                    }
+                }
+                else
+                {
+                    header('500 Internal Server Error', true, 404);
+                }
+
+                $result = mysqli_query($DBConnect, $sql);  
+
+                if($result)
+                {	 	
+                    $data = array();  
+                
+                    while($row = mysqli_fetch_assoc($result))  
+                    {  
+                        $data[] = $row;
+                    }
+                    //Zet resultaat om naar JSON
+                    echo json_encode($data); 
+                }
             }
         }	
     }
-
 }
 ?>
