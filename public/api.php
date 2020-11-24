@@ -24,21 +24,17 @@ $app->get('/get/{databasename}/{selectCount}/{tableCount}/{whereCount}', functio
 });
 
 //DELETE Request 
-$app->delete('/delete/{userInfo}', function (Request $request, Response $response) 
+$app->delete('/delete/{databasename}/{table}/{userInfo}', function (Request $request, Response $response) 
 {	
 	//Maakt variablen uit info van de URL
 	$userInfo = $request->getAttribute('userInfo');
 	$databaseName = $request->getAttribute('databasename');
-	$table = "";
+	$table = $request->getAttribute('table');
 
 	require "delete.php";
 	
-	//Kijkt als function overheen komt
-	if($function == "DeleteData" )
-	{
-		$g = new DELETE();
-		$g->DeleteData($databaseName, $table);	
-	}
+	$g = new DELETE();
+	$g->DeleteData($databaseName, $table, $userInfo);	
 });
 
 //PUT Request 
@@ -60,21 +56,17 @@ $app->put('/put/{userInfo}/{remove}', function (Request $request, Response $resp
 });
 
 //POST Request 
-$app->post('/post/{userInfo}', function (Request $request, Response $response) 
+$app->post('/post/{databasename}/{table}/{userInfo}', function (Request $request, Response $response) 
 {
 	//Maakt variablen uit info van de URL
 	$userInfo = $request->getAttribute('userInfo');
 	$databaseName = $request->getAttribute('databasename');
-	$table = "";
+	$table = $request->getAttribute('table');
 
 	require "post.php";
 	
-	//Kijkt als function overheen komt
-	if($function == "InsertData" )
-	{
-		$g = new POST();
-		$g->InsertData($databaseName, $table);	
-	}	
+	$g = new POST();
+	$g->InsertData($databaseName, $table, $userInfo);		
 });
 
 $app->run();

@@ -1,2 +1,3 @@
-http://localhost/TrumpAPI/public/api.php/get/trumpapi/ID^Link/Memes/Source|imgur
 http://localhost/TrumpAPI/public/api.php/get/trumpapi/Link/Memes/Source|imgur^ID|3160267
+http://localhost/TrumpAPI/public/api.php/post/trumpapi/debates/469^thijs^lol^10@26@16
+http://localhost/TrumpAPI/public/api.php/delete/trumpapi/debates/ID|469^Person|thijs

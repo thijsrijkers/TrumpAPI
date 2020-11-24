@@ -2,7 +2,7 @@
 class DELETE 
 {
  
-    function DeleteData($databaseName, $table) 
+    function DeleteData($databaseName, $table, $userinfo) 
     {
         if($databaseName) 
         {		
@@ -16,13 +16,29 @@ class DELETE
             } 
             else
             {
-                ///
-                ///
-                /// QUERY STATEMENT
-                ///
-                ///
+
+                $infoArray = explode("^", $userinfo);
+                $sql = "";
+
+                if($infoArray && $table)
+                {
+                    $sql = "DELETE FROM `$table` WHERE ";
+
+                    foreach($infoArray as $item)
+                    {
+                        $WhereClause = explode("|", $item);
+                        $sql = "".$sql."".$WhereClause[0]." = '$WhereClause[1]' AND ";
+                    }
+
+                    $sql = substr($sql, 0, -5);
+                    $result = mysqli_query($DBConnect, $sql);  
+    
+                    if($result)
+                    {	 	
+                        echo "De row/rows zijn verwijderd";
+                    }
+                }
             }
         }	
-    }
-    
+    }   
 }

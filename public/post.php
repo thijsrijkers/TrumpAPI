@@ -2,7 +2,7 @@
 class POST 
 {
  
-    function InsertData($databaseName, $table) 
+    function InsertData($databaseName, $table, $userinfo) 
     {
         if($databaseName) 
         {		
@@ -16,13 +16,47 @@ class POST
             } 
             else
             {
-                ///
-                ///
-                /// QUERY STATEMENT
-                ///
-                ///
+                $infoArray = explode("^", $userinfo);
+
+                $sql = "";
+
+                switch ($table) {
+                    case "debates":
+                        $sql = "INSERT INTO `$table` (`ID`, `Person`, `Text`, `Date`) VALUES (";		
+                        break;
+                    case "memes":
+                        $sql = "INSERT INTO `$table` (`ID`, `Link`, `Text`, `Date`, `Source`) VALUES (";				
+                        break;
+                    case "tweets":
+                        $sql = "INSERT INTO `$table` (`ID`, `Person`, `Text`, `Date`, `Retweet`, `Likes`) VALUES (";		
+                        break;
+                }
+                if(isset($infoArray))
+                {
+                    foreach($infoArray as $item)
+                    {
+                        $item = str_replace("@", "/", "$item");
+                        $sql= "".$sql."'".$item."', ";
+                    }
+                    $sql = substr($sql, 0, -2);
+                    $sql= "".$sql.")";
+                }
+                else
+                {
+                    header('500 Internal Server Error', true, 404);
+                }
+                
+				$result = mysqli_query($DBConnect, $sql);  
+
+				if($result)
+				{	 	
+					echo "De row/rows zijn toegevoegd";
+				}
+				else
+				{
+					echo "500 Internal Server Error";
+				}
             }
         }	
-    }
-    
+    }   
 }
