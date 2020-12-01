@@ -2,7 +2,7 @@
 class GET 
 {
  
-    function GetData($databaseName, $selectCount, $tableCount, $whereCount) 
+    function GetData($databaseName, $selectValue, $tableValue, $whereValue) 
     {
         if($databaseName) 
         {		
@@ -16,16 +16,16 @@ class GET
             } 
             else
             {
-                $selectArray = explode("^", $selectCount);
-                $tableArray = explode("^", $tableCount);
+                $selectArray = explode("^", $selectValue);
+                $tableArray = explode("^", $tableValue);
                 
-                if($whereCount != 66)
+                //The number 66 stands for not entered
+                if($whereValue != 66)
                 {
-                    $whereArray = explode("^", $whereCount);
+                    $whereArray = explode("^", $whereValue);
                 }
 
                 $selectString = "SELECT ";
-                $sql = "";
 
                 if(isset($selectArray))
                 {
@@ -88,5 +88,6 @@ class GET
             }
         }	
     }
+
 }
 ?>

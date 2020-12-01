@@ -8,18 +8,18 @@ require __DIR__ . '/../vendor/autoload.php';
 $app = new \Slim\App;
 
 //GET Request 
-$app->get('/get/{databasename}/{selectCount}/{tableCount}/{whereCount}', function (Request $request, Response $response, array $args) 
+$app->get('/get/{databasename}/{selectValue}/{tableValue}/{whereValue}', function (Request $request, Response $response, array $args) 
 {
 	//Maakt variablen uit info van de URL
-	$tableCount = $request->getAttribute('tableCount');
-	$selectCount = $request->getAttribute('selectCount');
-	$whereCount = $request->getAttribute('whereCount');
+	$tableValue = $request->getAttribute('tableValue');
+	$selectValue = $request->getAttribute('selectValue');
+	$whereValue = $request->getAttribute('whereValue');
 	$databaseName = $request->getAttribute('databasename');
 
 	require "get.php";
 
 	$g = new GET();
-	$g->GetData($databaseName, $selectCount, $tableCount, $whereCount);	
+	$g->GetData($databaseName, $selectValue, $tableValue, $whereValue);	
 
 });
 
@@ -38,21 +38,18 @@ $app->delete('/delete/{databasename}/{table}/{userInfo}', function (Request $req
 });
 
 //PUT Request 
-$app->put('/put/{userInfo}/{remove}', function (Request $request, Response $response) 
+$app->put('/put/{databasename}/{table}/{setValue}/{whereValue}', function (Request $request, Response $response) 
 {
 	//Maakt variablen uit info van de URL
-	$userInfo = $request->getAttribute('userInfo');
 	$databaseName = $request->getAttribute('databasename');
-	$table = "";
+	$table = $request->getAttribute('table');
+	$setValue = $request->getAttribute('setValue');
+	$whereValue = $request->getAttribute('whereValue');
 
 	require "put.php";
-	
-	//Kijkt als function overheen komt
-	if($function == "UpdateData" )
-	{
-		$g = new PUT();
-		$g->UpdateData($databaseName, $table);	
-	}
+
+	$g = new PUT();
+	$g->UpdateData($databaseName, $table, $setValue, $whereValue);	
 });
 
 //POST Request 
