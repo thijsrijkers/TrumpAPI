@@ -21,7 +21,7 @@ class POST
                 $sql = "";
 
                 switch ($table) {
-                    case "debates":
+                    case "debate":
                         $sql = "INSERT INTO `$table` (`ID`, `Person`, `Text`, `Date`) VALUES (";		
                         break;
                     case "memes":
@@ -43,7 +43,7 @@ class POST
                 }
                 else
                 {
-                    header('500 Internal Server Error', true, 404);
+                    header('500 Internal Server Error first', true, 404);
                 }
                 
 				$result = mysqli_query($DBConnect, $sql);  
@@ -54,7 +54,7 @@ class POST
 				}
 				else
 				{
-					echo "500 Internal Server Error";
+					echo "500 Internal Server Error last";
 				}
             }
         }	

@@ -1,0 +1,28 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "$id": "http://example.com/example.json",
+    "type": "array",
+    "title": "JSON schema",
+    "description": "The schema that is made for the TrumAPI. All entries in the DB's: debate, memes, tweets are covered.",
+    "default": [],
+    "examples": [
+        [
+            {
+                "Date": "",
+                "ID": "",
+                "Link": "",
+                "Text": "",
+                "Account": "",
+                "Network": "",
+                "Likes": ""
+            },
+            {
+                "ID": "",
+                "Person": "",
+                "Text": "",
+                "Date": ""
+            }
+        ]
+    ],
+    "additionalItems": true
+}

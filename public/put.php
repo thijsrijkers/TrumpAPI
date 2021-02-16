@@ -57,7 +57,6 @@ class PUT
                 }
 
                 $sql.= ";";
-                echo $sql;
                 $result = mysqli_query($DBConnect, $sql);  
     
                 if($result)

@@ -1,0 +1,9 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:attribute default="http://json-schema.org/draft-07/schema" name="$schema" type="xs:string"/>
+    <xs:attribute default="http://example.com/example.json" name="$id" type="xs:string"/>
+    <xs:attribute default="JSON schema" name="title" type="xs:string"/>
+    <xs:attribute default="The schema that is made for the TrumAPI. All entries in the DB's: debate, memes, tweets are covered." name="description" type="xs:string"/>
+    <xs:attribute default="" name="default" type="xs:string"/>
+    <xs:attribute default="[object Object],[object Object]" name="examples" type="xs:string"/>
+    <xs:attribute default="true" name="additionalItems" type="xs:string"/>
+</xs:schema>
