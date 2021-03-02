@@ -16,13 +16,13 @@ class GET
             } 
             else
             {
-                $selectArray = explode("^", $selectValue);
-                $tableArray = explode("^", $tableValue);
+                $selectArray = explode("|", $selectValue);
+                $tableArray = explode("|", $tableValue);
                 
                 //The number 66 stands for not entered
                 if($whereValue != 66)
                 {
-                    $whereArray = explode("^", $whereValue);
+                    $whereArray = explode("|", $whereValue);
                 }
 
                 $selectString = "SELECT ";
@@ -52,7 +52,7 @@ class GET
 
                             foreach($whereArray as $item)
                             {
-                                $WhereClause = explode("|", $item);
+                                $WhereClause = explode("=", $item);
                                 $whereString = "".$whereString."".$WhereClause[0]." = '$WhereClause[1]' AND ";
                             }
 

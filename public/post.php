@@ -16,7 +16,7 @@ class POST
             } 
             else
             {
-                $infoArray = explode("^", $userinfo);
+                $infoArray = explode("|", $userinfo);
 
                 $sql = "";
 

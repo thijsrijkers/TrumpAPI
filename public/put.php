@@ -16,11 +16,11 @@ class PUT
             } 
             else
             {
-                $setArray = explode("^", $setValue);
+                $setArray = explode("|", $setValue);
 
                 if($whereValue != 66)
                 {
-                    $whereArray = explode("^", $whereValue);
+                    $whereArray = explode("|", $whereValue);
                 }
 
                 if($table)
@@ -35,7 +35,7 @@ class PUT
 
                     foreach($setArray as $item)
                     {
-                        $setClause = explode("|", $item);
+                        $setClause = explode("=", $item);
                         $setString = "".$setString."".$setClause[0]." = '$setClause[1]', ";
                     }
 
@@ -49,7 +49,7 @@ class PUT
 
                     foreach($whereArray as $item)
                     {
-                        $WhereClause = explode("|", $item);
+                        $WhereClause = explode("=", $item);
                         $whereString = "".$whereString."".$WhereClause[0]." = '$WhereClause[1]' OR ";
                     }
 

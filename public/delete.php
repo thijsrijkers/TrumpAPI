@@ -17,7 +17,7 @@ class DELETE
             else
             {
 
-                $infoArray = explode("^", $userinfo);
+                $infoArray = explode("|", $userinfo);
                 $sql = "";
 
                 if($infoArray && $table)
@@ -26,7 +26,7 @@ class DELETE
 
                     foreach($infoArray as $item)
                     {
-                        $WhereClause = explode("|", $item);
+                        $WhereClause = explode("=", $item);
                         $sql = "".$sql."".$WhereClause[0]." = '$WhereClause[1]' AND ";
                     }
 

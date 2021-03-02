@@ -15,7 +15,7 @@ $app->get('/get/{databasename}/{selectValue}/{tableValue}/{whereValue}', functio
 	$selectValue = $request->getAttribute('selectValue');
 	$whereValue = $request->getAttribute('whereValue');
 	$databaseName = $request->getAttribute('databasename');
-
+	
 	require "get.php";
 
 	$g = new GET();
