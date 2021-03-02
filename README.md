@@ -39,7 +39,7 @@ a API that uses datasets of the 2016  elections
  
 <tr>
 <td>|</td>
-<td>This means a AND statement, for example if you want two tables: FROM debate, tweets. The ',' in this case is the | in the URL</td>
+<td>This means a AND statement, for example if you want two tables: FROM debate, tweets.</td>
 </tr>
 <tr>
 <td>=</td>
