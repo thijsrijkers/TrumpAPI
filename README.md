@@ -15,7 +15,6 @@ a API that uses datasets of the 2016  elections
 <td>memory_limit</td>
 <td>In your PHP.ini file of your XAMPP you need to change the memory_limit to 1024M because the data can be to great to handle for XAMPP</td>
 </tr>
-<tr>
 </tbody>
 </table>
 
