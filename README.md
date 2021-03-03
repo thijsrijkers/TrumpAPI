@@ -71,29 +71,20 @@ a API that uses datasets of the 2016  elections
 </tbody>
 </table>
 
+<br>
+
 <table>
 <thead>
 <tr>
-<th>URL symbol convention</th>
+<th>URL convention</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
  
 <tr>
-<td>|</td>
-<td>This means a AND statement, for example if you want two tables: FROM debate, tweets.</td>
-</tr>
-<tr>
-<td>=</td>
-<td>This symbol stands for the = symbol in a SQL query. This will be used if you want to use a where for example</td>
-</tr>
-<td>@</td>
-<td>Because a extra / in your URL can mess with the API, this is the replacement for in the URL. For example you want to use a data, instead of 09/01/2021 you write for the URL 09@01@2021</td>
-</tr>
-</tr>
-<td>66</td>
-<td>Because the user can choose to not use a where in a get for example you need to enter 66 to say to the API that there is no where clause necessary</td>
+<td>GET</td>
+<td>http://localhost/TrumpAPI/public/api.php/  <b>get/{databasename}/{selectValue}/{tableValue}/{whereValue}/</b>td>
 </tr>
 </tbody>
 </table>
