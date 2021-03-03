@@ -76,15 +76,31 @@ a API that uses datasets of the 2016  elections
 <table>
 <thead>
 <tr>
-<th>URL convention</th>
+<th>URL convention for CRUD usage</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
  
 <tr>
+<td>Standard begin of URL</td>
+<td>http://localhost/TrumpAPI/public/api.php/</td>
+</tr>
+<tr>
 <td>GET</td>
-<td>http://localhost/TrumpAPI/public/api.php/  <b>get/{databasename}/{selectValue}/{tableValue}/{whereValue}/</b>td>
+<td>get/{databasename}/{selectValue}/{tableValue}/{whereValue}</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>put/{databasename}/{table}/{setValue}/{whereValue}</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>post/{databasename}/{table}/{userInfo}</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>delete/{databasename}/{table}/{userInfo}>/td>
 </tr>
 </tbody>
 </table>
