@@ -62,7 +62,7 @@ a API that uses datasets of the 2016  elections
 <td>This symbol stands for the = symbol in a SQL query. This will be used if you want to use a where for example</td>
 </tr>
 <td>@</td>
-<td>Because a extra / in your URL can mess with the API, this is the replacement for in the URL. For example you want to use a data, instead of 09/01/2021 you write for the URL 09@01@2021</td>
+<td>Because a extra / in your URL can mess with the API, this is the replacement for in the URL. For example you want to use a date, instead of 09/01/2021 you write for the URL 09@01@2021</td>
 </tr>
 </tr>
 <td>66</td>
