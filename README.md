@@ -1,6 +1,23 @@
 # TrumpAPI
 a API that uses datasets of the 2016  elections
 
+<h2> Changes to XAMPP needed</h2>
+<table>
+<thead>
+<tr>
+<th>Change</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+ 
+<tr>
+<td>memory_limit</td>
+<td>In your PHP.ini file of your XAMPP you need to change the memory_limit to 1024M because the data can be to great to handle for XAMPP</td>
+</tr>
+<tr>
+</tbody>
+</table>
 
 <h2> Documentation</h2>
 <h3> Commit conventions</h3>
