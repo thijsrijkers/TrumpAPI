@@ -100,7 +100,7 @@ a API that uses datasets of the 2016  elections
 </tr>
 <tr>
 <td>DELETE</td>
-<td>delete/{databasename}/{tableValue}/{userInfo}>/td>
+<td>delete/{databasename}/{tableValue}/{userInfo}</td>
 </tr>
 </tbody>
 </table>
