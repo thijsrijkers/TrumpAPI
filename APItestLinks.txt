@@ -1,8 +1,7 @@
 http://localhost/TrumpAPI/public/api.php/trumpapi/*/debate/Text=(APPLAUSE)    			/////get
-http://localhost/TrumpAPI/public/api.php/trumpapi/Person/debate|tweets/ID=69
 
-http://localhost/TrumpAPI/public/api.php/trumpapi/debate/469|thijs|lol|10@26@16		/////post
+http://localhost/TrumpAPI/public/api.php/trumpapi/debate/469|thijs|lol|10@26@16			/////post
 
-http://localhost/TrumpAPI/public/api.php/trumpapi/debate/ID=469|Person=thijs		/////delete
+http://localhost/TrumpAPI/public/api.php/trumpapi/debate/ID=469|Person=thijs			/////delete
 
 http://localhost/TrumpAPI/public/api.php/trumpapi/debate/ID=69/Person=Holt			/////put
