@@ -32,26 +32,45 @@ h1{
 
 }
 
+#Debate{
+    background-color: blue;
+    width: 2vw;
+    height: 2vh;
+}
+
+#Memes{
+    background-color: yellow;
+    width: 2vw;
+    height: 2vh;
+}
+
+#Tweets{
+    background-color: green;
+    width: 2vw;
+    height: 2vh;
+}
+
 #Home{
 
 }
 
 #GET{
-
+    color: white;
+    margin: 0 auto;
 }
 
 #POST{
-
+    color: white;
 }
 
 #PUT{
-
+    color: white;
 }
 
 #DELETE{
-
+    color: white;
 }
 
 #Result{
-
+    color: white;
 }

@@ -19,3 +19,14 @@ function SetGRUD(){
     document.getElementById(""+CRUD+"").style.display = "block";
     alert('You have selected: '+CRUD+'');
 }
+
+function SetCheckboxOption(value)
+{
+    var checkBox = document.getElementById("get"+value+"");
+    if (checkBox.checked == true){
+        document.getElementById(""+value+"").style.display = "block";
+    } else {
+        document.getElementById(""+value+"").style.display = "none";
+    }
+}
+
