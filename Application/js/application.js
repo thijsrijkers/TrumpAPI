@@ -1,4 +1,5 @@
 var CRUD = "GET";
+var countSelectTables = 0;
 
 function SetGRUD(){
     CRUD = document.getElementById('CRUD').value;
@@ -25,8 +26,21 @@ function SetCheckboxOption(value)
     var checkBox = document.getElementById("get"+value+"");
     if (checkBox.checked == true){
         document.getElementById(""+value+"").style.display = "block";
+        countSelectTables++;
     } else {
         document.getElementById(""+value+"").style.display = "none";
+        countSelectTables--;
+    }
+
+    SetGetButton();
+}
+
+function SetGetButton()
+{
+    if (countSelectTables != 0){
+        document.getElementById("GetButton").style.display = "block";
+    } else {
+        document.getElementById("GetButton").style.display = "none";
     }
 }
 

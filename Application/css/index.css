@@ -25,29 +25,21 @@ h1{
 #OptionContainer{
     background-color: #554e60;
     width: 50vw;
-    height: 50vh;
+    height: 80vh;
     position: absolute;
-    top: 25vh;
+    top: 10vh;
     left: 25vw;
 
 }
 
 #Debate{
-    background-color: blue;
-    width: 2vw;
-    height: 2vh;
 }
 
 #Memes{
-    background-color: yellow;
-    width: 2vw;
-    height: 2vh;
 }
 
 #Tweets{
-    background-color: green;
-    width: 2vw;
-    height: 2vh;
+
 }
 
 #Home{
@@ -57,6 +49,8 @@ h1{
 #GET{
     color: white;
     margin: 0 auto;
+    font-size: 2vh;
+    font:small-caption;
 }
 
 #POST{
