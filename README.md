@@ -1,6 +1,10 @@
 # TrumpAPI
 a API that uses datasets of the 2016  elections
 
+<h2> Progression GIF</h2>
+
+<p align="center"><img src="https://media1.giphy.com/media/2lOPJMehh7bwB2SyIB/giphy.gif" width="960" height="512"> </p>
+
 <h2> Changes to XAMPP needed</h2>
 <table>
 <thead>
