@@ -1,0 +1,33 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    font-size: 2vh;
+    font:small-caption;
+}
+
+#MainContainer{
+    background-color: #3C3744;
+    width: 100vw;
+    height: 100vh;
+}
+
+#NavBar{
+    background-color: #25212c;
+    width: 50vw;
+    height: 5vh;
+    position: relative;
+}
+
+.OptionContainer{
+    background-color: #554e60;
+    width: 50vw;
+    height: 50vh;
+    position: absolute;
+    top: 25vh;
+    left: 25vw;
+}
