@@ -22,12 +22,36 @@ h1{
     height: 5vh;
     position: relative;
 }
-
-.OptionContainer{
+#OptionContainer{
     background-color: #554e60;
     width: 50vw;
     height: 50vh;
     position: absolute;
     top: 25vh;
     left: 25vw;
+
+}
+
+#Home{
+
+}
+
+#GET{
+
+}
+
+#POST{
+
+}
+
+#PUT{
+
+}
+
+#DELETE{
+
+}
+
+#Result{
+
 }

@@ -15,5 +15,7 @@ function SetGRUD(){
         .catch(err => { throw err });
 
     }
+    document.getElementById("Home").style.display = "none";
+    document.getElementById(""+CRUD+"").style.display = "block";
     alert('You have selected: '+CRUD+'');
 }

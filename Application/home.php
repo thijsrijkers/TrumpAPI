@@ -1,5 +1,3 @@
-<script src="js/application.js"></script>
-
 <select name="CRUD" id="CRUD">
   <option value="GET">GET</option>
   <option value="PUT">PUT</option>
