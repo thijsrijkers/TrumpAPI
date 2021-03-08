@@ -104,3 +104,32 @@ a API that uses datasets of the 2016  elections
 </tr>
 </tbody>
 </table>
+
+<h2> Test data</h2>
+<table>
+<thead>
+<tr>
+<th>CRUD action</th>
+<th>URL</th>
+</tr>
+</thead>
+<tbody>
+ 
+<tr>
+<td>GET</td>
+<td>http://localhost/TrumpAPI/public/api.php/trumpapi/*/debate/Text=(APPLAUSE)</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>http://localhost/TrumpAPI/public/api.php/trumpapi/debate/469|thijs|lol|10@26@16</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>http://localhost/TrumpAPI/public/api.php/trumpapi/debate/ID=469|Person=thijs</td>
+</tr>
+<tr>
+<td>PUT</td>
+<td>http://localhost/TrumpAPI/public/api.php/trumpapi/debate/ID=69/Person=Holt</td>
+</tr>
+</tbody>
+</table>
