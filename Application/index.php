@@ -12,22 +12,22 @@
                     <h1>TrumpAPI Processor </h1>
                 </div>
                 <div id="Home">
-                    <?php include 'home.php';?>
+                    <?php include 'extensions/home.php';?>
                 </div>
                 <div id="GET">
-                    <?php include 'get.php';?>
+                    <?php include 'extensions/get.php';?>
                 </div>
                 <div id="POST">
-                   
+                    <?php include 'extensions/post.php';?>
                 </div>
                 <div id="PUT">
-                    
+                    <?php include 'extensions/put.php';?>
                 </div>
                 <div id="DELETE">
-                   
+                    <?php include 'extensions/delete.php';?>
                 </div>
                 <div id="Result">
-                    
+                    <?php include 'extensions/result.php';?>
                 </div>
             </div>
         </div>
