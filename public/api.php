@@ -8,7 +8,7 @@ require __DIR__ . '/../vendor/autoload.php';
 $app = new \Slim\App;
 
 //GET Request 
-$app->get('/get/{databasename}/{selectValue}/{tableValue}/{whereValue}', function (Request $request, Response $response, array $args) 
+$app->get('/{databasename}/{selectValue}/{tableValue}/{whereValue}', function (Request $request, Response $response, array $args) 
 {
 	//Maakt variablen uit info van de URL
 	$tableValue = $request->getAttribute('tableValue');
@@ -24,7 +24,7 @@ $app->get('/get/{databasename}/{selectValue}/{tableValue}/{whereValue}', functio
 });
 
 //DELETE Request 
-$app->delete('/delete/{databasename}/{table}/{userInfo}', function (Request $request, Response $response) 
+$app->delete('/{databasename}/{table}/{userInfo}', function (Request $request, Response $response) 
 {	
 	//Maakt variablen uit info van de URL
 	$userInfo = $request->getAttribute('userInfo');
@@ -38,7 +38,7 @@ $app->delete('/delete/{databasename}/{table}/{userInfo}', function (Request $req
 });
 
 //PUT Request 
-$app->put('/put/{databasename}/{table}/{setValue}/{whereValue}', function (Request $request, Response $response) 
+$app->put('/{databasename}/{table}/{setValue}/{whereValue}', function (Request $request, Response $response) 
 {
 	//Maakt variablen uit info van de URL
 	$databaseName = $request->getAttribute('databasename');
@@ -53,7 +53,7 @@ $app->put('/put/{databasename}/{table}/{setValue}/{whereValue}', function (Reque
 });
 
 //POST Request 
-$app->post('/post/{databasename}/{table}/{userInfo}', function (Request $request, Response $response) 
+$app->post('/{databasename}/{table}/{userInfo}', function (Request $request, Response $response) 
 {
 	//Maakt variablen uit info van de URL
 	$userInfo = $request->getAttribute('userInfo');
