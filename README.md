@@ -93,7 +93,7 @@ a API that uses datasets of the 2016  elections
 </tr>
 <tr>
 <td>GET</td>
-<td>{dataType}/{databasename}/{selectValue}/{tableValue}/{whereValue}</td>
+<td>/{dataType}/{tableValue}/search?q=*&id=test&persons=test&Text=Test&Date=test</td>
 </tr>
 <tr>
 <td>PUT</td>
@@ -122,7 +122,7 @@ a API that uses datasets of the 2016  elections
  
 <tr>
 <td>GET</td>
-<td>http://localhost/TrumpAPI/public/api.php/JSON/trumpapi/*/debate/Text=(APPLAUSE)</td>
+<td>http://localhost/TrumpAPI/public/api.php/JSON/debate/search?q=*&id=69&persons=Holt</td>
 </tr>
 <tr>
 <td>POST</td>
