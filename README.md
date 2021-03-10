@@ -93,7 +93,7 @@ a API that uses datasets of the 2016  elections
 </tr>
 <tr>
 <td>GET</td>
-<td>{databasename}/{selectValue}/{tableValue}/{whereValue}</td>
+<td>{dataType}/{databasename}/{selectValue}/{tableValue}/{whereValue}</td>
 </tr>
 <tr>
 <td>PUT</td>
