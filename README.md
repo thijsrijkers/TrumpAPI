@@ -93,7 +93,7 @@ a API that uses datasets of the 2016  elections
 </tr>
 <tr>
 <td>GET</td>
-<td>/{dataType}/{tableValue}/search?q=*&id=test&persons=test&Text=Test&Date=test</td>
+<td>/{dataType}/{tableValue}/search?</td>
 </tr>
 <tr>
 <td>PUT</td>
