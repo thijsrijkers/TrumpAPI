@@ -122,7 +122,7 @@ a API that uses datasets of the 2016  elections
  
 <tr>
 <td>GET</td>
-<td>http://localhost/TrumpAPI/public/api.php/trumpapi/*/debate/Text=(APPLAUSE)</td>
+<td>http://localhost/TrumpAPI/public/api.php/JSON/trumpapi/*/debate/Text=(APPLAUSE)</td>
 </tr>
 <tr>
 <td>POST</td>
