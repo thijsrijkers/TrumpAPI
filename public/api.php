@@ -8,28 +8,31 @@ require __DIR__ . '/../vendor/autoload.php';
 $app = new \Slim\App;
 
 //GET Request 
-$app->get('/{dataType}/{databasename}/{selectValue}/{tableValue}/{whereValue}', function (Request $request, Response $response, array $args) 
+$app->get('/{dataType}/{tableValue}/search', function (Request $request, Response $response, array $args) 
 {
-	//Maakt variablen uit info van de URL
+	$databaseName = "trumpapi";
+
 	$dataType = $request->getAttribute('dataType');
-	$tableValue = $request->getAttribute('tableValue');
-	$selectValue = $request->getAttribute('selectValue');
-	$whereValue = $request->getAttribute('whereValue');
-	$databaseName = $request->getAttribute('databasename');
-	
-	require "get.php";
+	$tableValue =$request->getAttribute('tableValue');
 
-	$g = new GET();
-	$g->GetData($dataType, $databaseName, $selectValue, $tableValue, $whereValue);	
+	$selectValue = $request->getParam('q');
 
+	$id= $request->getParam('id');
+	$person= $request->getParam('persons');
+	$text= $request->getParam('texts');
+	$date= $request->getParam('dates');
+
+	require_once ('GET.php');
+	$get = new GET();
+	$whereValue = $get->CreateWhereStatement($tableValue, $id, $person, $text, $date);
+	$get->GetData($dataType, $databaseName, $selectValue, $tableValue, $whereValue);	
 });
 
 //DELETE Request 
-$app->delete('/{databasename}/{table}/{userInfo}', function (Request $request, Response $response) 
+$app->delete('/{table}?{userInfo}', function (Request $request, Response $response) 
 {	
 	//Maakt variablen uit info van de URL
 	$userInfo = $request->getAttribute('userInfo');
-	$databaseName = $request->getAttribute('databasename');
 	$table = $request->getAttribute('table');
 
 	require "delete.php";
@@ -39,10 +42,9 @@ $app->delete('/{databasename}/{table}/{userInfo}', function (Request $request, R
 });
 
 //PUT Request 
-$app->put('/{databasename}/{table}/{setValue}/{whereValue}', function (Request $request, Response $response) 
+$app->put('/{table}?{setValue}/{whereValue}', function (Request $request, Response $response) 
 {
 	//Maakt variablen uit info van de URL
-	$databaseName = $request->getAttribute('databasename');
 	$table = $request->getAttribute('table');
 	$setValue = $request->getAttribute('setValue');
 	$whereValue = $request->getAttribute('whereValue');
@@ -54,11 +56,10 @@ $app->put('/{databasename}/{table}/{setValue}/{whereValue}', function (Request $
 });
 
 //POST Request 
-$app->post('/{databasename}/{table}/{userInfo}', function (Request $request, Response $response) 
+$app->post('/{table}?{userInfo}', function (Request $request, Response $response) 
 {
 	//Maakt variablen uit info van de URL
 	$userInfo = $request->getAttribute('userInfo');
-	$databaseName = $request->getAttribute('databasename');
 	$table = $request->getAttribute('table');
 
 	require "post.php";

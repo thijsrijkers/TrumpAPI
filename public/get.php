@@ -1,5 +1,5 @@
 <?php
-class GET 
+class GET
 {
 
     function GetData($dataType, $databaseName, $selectValue, $tableValue, $whereValue) 
@@ -13,63 +13,26 @@ class GET
                 echo "500 Internal Server Error";
             } 
             else
-            {
-                $selectArray = explode("|", $selectValue);
-                $tableArray = explode("|", $tableValue);
-                
-                //The number 66 stands for not entered
+            {      
+                $selectString = "SELECT "; 
+                $selectString.= $selectValue;
+
+                $fromString = $selectString;
+                $fromString.= " FROM ";
+                $fromString.= $tableValue;
+
+                $whereString = $fromString;
+
                 if($whereValue != 66)
                 {
-                    $whereArray = explode("|", $whereValue);
+                    $whereString.= " WHERE ";        
+                    $whereString.=$whereValue;
+                    $whereString = substr($whereString, 0, -5);
                 }
 
-                $selectString = "SELECT ";
-
-                if(isset($selectArray))
-                {
-                    foreach($selectArray as $item)
-                    {
-                        $selectString = "".$selectString." ".$item.", ";
-                    }
-
-                    $fromString = substr($selectString, 0, -2);
-                    $fromString.= " FROM ";
-
-                    if(isset($tableArray))
-                    {
-                        foreach($tableArray as $item)
-                        {
-                            $fromString = "".$fromString." ".$item.", ";
-                        }
-
-                        $whereString = substr($fromString, 0, -2);
-
-                        if(isset($whereArray))
-                        {
-                            $whereString.= " WHERE ";
-
-                            foreach($whereArray as $item)
-                            {
-                                $WhereClause = explode("=", $item);
-                                $whereString = "".$whereString."".$WhereClause[0]." = '$WhereClause[1]' AND ";
-                            }
-
-                            $whereString = substr($whereString, 0, -5);
-                        }
-
-                        $sql = $whereString;
-                        $sql.= ";";
-                    }
-                    else
-                    {
-                        header('500 Internal Server Error', true, 404);
-                    }
-                }
-                else
-                {
-                    header('500 Internal Server Error', true, 404);
-                }
-                
+                $sql = $whereString;
+                $sql.= ";";
+            
                 $g = new GET();
 	            $g->ExecuteQuery($dataType, $DBConnect, $sql);
             }
@@ -111,6 +74,45 @@ class GET
                 echo json_encode($data); 
             }
         }
+    }
+
+    function CreateWhereStatement($tableValue, $id, $person, $text, $date)
+    {
+        $whereSet = false;
+
+        if($id == "" && $person == "" && $text == "" && $date == "")
+        {
+            $whereValue = 66;
+        }
+        else
+        {
+            $whereValue = "";
+
+            if($id != "" && $whereSet == false)
+            {
+                $whereValue.= "$tableValue.ID = '$id' AND ";
+                //$whereSet = true;
+            }
+    
+            if($person != "" && $whereSet == false)
+            {
+                $whereValue.= "$tableValue.Person = '$person' AND ";
+                //$whereSet = true;
+            }
+    
+            if($text != "" && $whereSet == false)
+            {
+                $whereValue.= "$tableValue.Text = '$text' AND ";
+                //$whereSet = true;
+            }
+    
+            if($date != "" && $whereSet == false)
+            {
+                $whereValue.= "$tableValue.Date = '$date' AND ";
+                //$whereSet = true;
+            }
+        }
+        return $whereValue;
     }
 }
 ?>
