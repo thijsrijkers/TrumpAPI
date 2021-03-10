@@ -1,8 +1,8 @@
 <?php
 class GET 
 {
- 
-    function GetData($databaseName, $selectValue, $tableValue, $whereValue) 
+
+    function GetData($dataType, $databaseName, $selectValue, $tableValue, $whereValue) 
     {
         if($databaseName) 
         {		
@@ -10,9 +10,7 @@ class GET
 
             if ($DBConnect === FALSE)
             {
-                echo "<p>Unable to connect to the database server.</p>"
-                    . "<p>Error code " . mysqli_errno() . ": "
-                    . mysqli_error() . "</p>";
+                echo "500 Internal Server Error";
             } 
             else
             {
@@ -71,23 +69,48 @@ class GET
                 {
                     header('500 Internal Server Error', true, 404);
                 }
-
-                $result = mysqli_query($DBConnect, $sql);  
-
-                if($result)
-                {	 	
-                    $data = array();  
                 
-                    while($row = mysqli_fetch_assoc($result))  
-                    {  
-                        $data[] = $row;
-                    }
-                    //Zet resultaat om naar JSON
-                    echo json_encode($data); 
-                }
+                $g = new GET();
+	            $g->ExecuteQuery($dataType, $DBConnect, $sql);
             }
         }	
-    }
+    } 
 
+    function ExecuteQuery($dataType, $DBConnect, $sql)
+    {
+
+        $result = mysqli_query($DBConnect, $sql);  
+
+        if($result)
+        {	 	
+            
+            if($dataType == "XML")
+            {
+                $xml=new SimpleXMLElement("<TrumpAPI/>");
+                $xml->addChild('Data','');
+                
+                while($row = mysqli_fetch_assoc($result))  
+                {  
+                    $xml->Data->addChild('ID',$row["ID"]);
+                    $xml->Data->addChild('Person',$row["Person"]);
+                    $xml->Data->addChild('Text',$row["Text"]);
+                    $xml->Data->addChild('Date',$row["Date"]);
+                }
+                echo $xml->asXML();
+
+            }
+            else if($dataType == "JSON")
+            {
+                $data = array();  
+        
+                while($row = mysqli_fetch_assoc($result))  
+                {  
+                    $data[] = $row;
+                }
+                
+                echo json_encode($data); 
+            }
+        }
+    }
 }
 ?>

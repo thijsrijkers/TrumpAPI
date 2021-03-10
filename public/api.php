@@ -8,9 +8,10 @@ require __DIR__ . '/../vendor/autoload.php';
 $app = new \Slim\App;
 
 //GET Request 
-$app->get('/{databasename}/{selectValue}/{tableValue}/{whereValue}', function (Request $request, Response $response, array $args) 
+$app->get('/{dataType}/{databasename}/{selectValue}/{tableValue}/{whereValue}', function (Request $request, Response $response, array $args) 
 {
 	//Maakt variablen uit info van de URL
+	$dataType = $request->getAttribute('dataType');
 	$tableValue = $request->getAttribute('tableValue');
 	$selectValue = $request->getAttribute('selectValue');
 	$whereValue = $request->getAttribute('whereValue');
@@ -19,7 +20,7 @@ $app->get('/{databasename}/{selectValue}/{tableValue}/{whereValue}', function (R
 	require "get.php";
 
 	$g = new GET();
-	$g->GetData($databaseName, $selectValue, $tableValue, $whereValue);	
+	$g->GetData($dataType, $databaseName, $selectValue, $tableValue, $whereValue);	
 
 });
 
