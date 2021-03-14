@@ -15,6 +15,12 @@ class GET
             else
             {      
                 $selectString = "SELECT "; 
+
+                if($selectValue == "")
+                {
+                    $selectValue = "*";
+                }
+
                 $selectString.= $selectValue;
 
                 $fromString = $selectString;

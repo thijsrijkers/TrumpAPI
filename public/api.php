@@ -8,14 +8,14 @@ require __DIR__ . '/../vendor/autoload.php';
 $app = new \Slim\App;
 
 //GET Request 
-$app->get('/{dataType}/{tableValue}/search', function (Request $request, Response $response, array $args) 
+$app->get('/{dataType}/{tableValue}', function (Request $request, Response $response, array $args) 
 {
 	$databaseName = "trumpapi";
 
 	$dataType = $request->getAttribute('dataType');
 	$tableValue =$request->getAttribute('tableValue');
 
-	$selectValue = $request->getParam('q');
+	$selectValue = $request->getParam('search');
 
 	$id= $request->getParam('id');
 	$person= $request->getParam('persons');

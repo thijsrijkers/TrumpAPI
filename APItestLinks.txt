@@ -1,4 +1,4 @@
-http://localhost/TrumpAPI/public/api.php/JSON/debate/search?q=*&id=69&persons=Holt    		/////get
+http://localhost/TrumpAPI/public/api.php/JSON/debate?search=ID&persons=Holt   			/////get
 
 http://localhost/TrumpAPI/public/api.php/trumpapi/debate/469|thijs|lol|10@26@16			/////post
 
