@@ -2,7 +2,7 @@
 class POST 
 {
  
-    function InsertData($databaseName, $table, $id, $person, $text, $date) 
+    function InsertData($databaseName, $table, $body) 
     {
         if($databaseName) 
         {		
@@ -16,13 +16,9 @@ class POST
             } 
             else
             {
-                if($id == "" || $person == "" || $text == "" || $date == "")
-                {
-                    echo "500 Internal Server Error last";
-                    return;
-                }
-
-                $sql = "INSERT INTO `$table` (`ID`, `Person`, `Text`, `Date`) VALUES ('$id', '$person', '$text', '$date')";	
+                $data = json_decode($body, true);
+    
+                $sql = "INSERT INTO `$table` (`ID`, `Person`, `Text`, `Date`) VALUES ('$data[id]', '$data[person]', '$data[text]', '$data[date]')";	
                 
 				$result = mysqli_query($DBConnect, $sql);  
 

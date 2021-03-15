@@ -1,5 +1,5 @@
 var CRUD = "GET";
-var countSelectTables = 0;
+var selectTables = false;
 
 function SetGRUD(){
     CRUD = document.getElementById('CRUD').value;
@@ -25,11 +25,11 @@ function SetCheckboxOption(value)
 {
     var checkBox = document.getElementById("get"+value+"");
     if (checkBox.checked == true){
-        document.getElementById(""+value+"").style.display = "block";
-        countSelectTables++;
+        document.getElementById("queryInfo").style.display = "block";
+        selectTables = true;
     } else {
-        document.getElementById(""+value+"").style.display = "none";
-        countSelectTables--;
+        document.getElementById("queryInfo").style.display = "none";
+        selectTables = false;
     }
 
     SetGetButton();
@@ -37,7 +37,7 @@ function SetCheckboxOption(value)
 
 function SetGetButton()
 {
-    if (countSelectTables != 0){
+    if (selectTables != true){
         document.getElementById("GetButton").style.display = "block";
     } else {
         document.getElementById("GetButton").style.display = "none";

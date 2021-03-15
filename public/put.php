@@ -2,7 +2,7 @@
 class PUT 
 {
  
-    function UpdateData($databaseName, $table, $setValue, $whereValue) 
+    function UpdateData($databaseName, $table, $id, $body) 
     {
         if($databaseName) 
         {		
@@ -16,8 +16,10 @@ class PUT
             } 
             else
             {
-                $sql = "UPDATE $table SET $setValue WHERE $whereValue;";
+                $data = json_decode($body, true);
 
+                $sql = "UPDATE $table SET Person = '$data[person]', Text = '$data[text]', Date = '$data[date]'   WHERE ID = '$id';";
+  
                 $result = mysqli_query($DBConnect, $sql);  
     
                 if($result)
@@ -29,30 +31,6 @@ class PUT
                 }
             }
         }	
-    }
-
-    function CreateSet($setValue)
-    {
- 
-        $substr = '=';
-        $attachment = "'";
-
-        $setValue  = str_replace($substr, $substr.$attachment, $setValue);
-        $setValue.="'";
-
-        return $setValue;
-    }
-
-    function CreateWhere($whereValue)
-    {
- 
-        $substr = '=';
-        $attachment = "'";
-
-        $whereValue  = str_replace($substr, $substr.$attachment, $whereValue);
-        $whereValue.="'";
-
-        return $whereValue;
     }
     
 }

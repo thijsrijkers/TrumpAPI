@@ -21,7 +21,6 @@ class DELETE
    
                 $sql = "DELETE FROM `$table` WHERE ";
                 $sql.=$whereValue;
-                $sql = substr($sql, 0, -5);
 
                 $result = mysqli_query($DBConnect, $sql);  
 
@@ -34,42 +33,15 @@ class DELETE
         }	
     }
     
-    function CreateWhereStatement($tableValue, $id, $person, $text, $date)
+    function CreateWhereStatement($tableValue, $id)
     {
-        $whereSet = false;
-
-        if($id == "" && $person == "" && $text == "" && $date == "")
+        $whereValue = "";
+        
+        if($id != "")
         {
-            $whereValue = 66;
+            $whereValue.= "$tableValue.ID = '$id'";
         }
-        else
-        {
-            $whereValue = "";
-
-            if($id != "" && $whereSet == false)
-            {
-                $whereValue.= "$tableValue.ID = '$id' AND ";
-                //$whereSet = true;
-            }
-    
-            if($person != "" && $whereSet == false)
-            {
-                $whereValue.= "$tableValue.Person = '$person' AND ";
-                //$whereSet = true;
-            }
-    
-            if($text != "" && $whereSet == false)
-            {
-                $whereValue.= "$tableValue.Text = '$text' AND ";
-                //$whereSet = true;
-            }
-    
-            if($date != "" && $whereSet == false)
-            {
-                $whereValue.= "$tableValue.Date = '$date' AND ";
-                //$whereSet = true;
-            }
-        }
+          
         return $whereValue;
     }
 }

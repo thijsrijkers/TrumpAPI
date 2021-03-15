@@ -29,16 +29,14 @@ class GET
 
                 $whereString = $fromString;
 
-                if($whereValue != 66)
+                if($whereValue != "")
                 {
                     $whereString.= " WHERE ";        
                     $whereString.=$whereValue;
-                    $whereString = substr($whereString, 0, -5);
                 }
 
                 $sql = $whereString;
                 $sql.= ";";
-            
                 $g = new GET();
 	            $g->ExecuteQuery($dataType, $DBConnect, $sql);
             }
@@ -82,42 +80,15 @@ class GET
         }
     }
 
-    function CreateWhereStatement($tableValue, $id, $person, $text, $date)
+    function CreateWhereStatement($tableValue, $id)
     {
-        $whereSet = false;
-
-        if($id == "" && $person == "" && $text == "" && $date == "")
+        $whereValue = "";
+        
+        if($id != "")
         {
-            $whereValue = 66;
+            $whereValue.= "$tableValue.ID = '$id'";
         }
-        else
-        {
-            $whereValue = "";
-
-            if($id != "" && $whereSet == false)
-            {
-                $whereValue.= "$tableValue.ID = '$id' AND ";
-                //$whereSet = true;
-            }
-    
-            if($person != "" && $whereSet == false)
-            {
-                $whereValue.= "$tableValue.Person = '$person' AND ";
-                //$whereSet = true;
-            }
-    
-            if($text != "" && $whereSet == false)
-            {
-                $whereValue.= "$tableValue.Text = '$text' AND ";
-                //$whereSet = true;
-            }
-    
-            if($date != "" && $whereSet == false)
-            {
-                $whereValue.= "$tableValue.Date = '$date' AND ";
-                //$whereSet = true;
-            }
-        }
+          
         return $whereValue;
     }
 }
