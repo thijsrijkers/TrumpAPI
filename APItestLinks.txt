@@ -1,7 +1,8 @@
-http://localhost/TrumpAPI/public/api.php/JSON/debate?search=ID&persons=Holt   			/////get
+http://localhost/TrumpAPI/public/api.php/JSON/debates/search?id=69&person=Holt 					/////get
+http://localhost/TrumpAPI/public/api.php/XML/debates  								/////get
 
-http://localhost/TrumpAPI/public/api.php/trumpapi/debate/469|thijs|lol|10@26@16			/////post
+http://localhost/TrumpAPI/public/api.php/debates/insert?id=469&person=thijs&text=lol&date=10/26/16		/////post
 
-http://localhost/TrumpAPI/public/api.php/trumpapi/debate/ID=469|Person=thijs			/////delete
+http://localhost/TrumpAPI/public/api.php/debates/delete?id=469&person=thijs					/////delete
 
-http://localhost/TrumpAPI/public/api.php/trumpapi/debate/ID=69/Person=Holt			/////put
+http://localhost/TrumpAPI/public/api.php/debates/update?set=id=69&where=person=Holt				/////put

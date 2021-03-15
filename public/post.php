@@ -2,7 +2,7 @@
 class POST 
 {
  
-    function InsertData($databaseName, $table, $userinfo) 
+    function InsertData($databaseName, $table, $id, $person, $text, $date) 
     {
         if($databaseName) 
         {		
@@ -16,35 +16,13 @@ class POST
             } 
             else
             {
-                $infoArray = explode("|", $userinfo);
-
-                $sql = "";
-
-                switch ($table) {
-                    case "debate":
-                        $sql = "INSERT INTO `$table` (`ID`, `Person`, `Text`, `Date`) VALUES (";		
-                        break;
-                    case "memes":
-                        $sql = "INSERT INTO `$table` (`ID`, `Link`, `Text`, `Date`, `Source`) VALUES (";				
-                        break;
-                    case "tweets":
-                        $sql = "INSERT INTO `$table` (`ID`, `Person`, `Text`, `Date`, `Retweet`, `Likes`) VALUES (";		
-                        break;
-                }
-                if(isset($infoArray))
+                if($id == "" || $person == "" || $text == "" || $date == "")
                 {
-                    foreach($infoArray as $item)
-                    {
-                        $item = str_replace("@", "/", "$item");
-                        $sql= "".$sql."'".$item."', ";
-                    }
-                    $sql = substr($sql, 0, -2);
-                    $sql= "".$sql.")";
+                    echo "500 Internal Server Error last";
+                    return;
                 }
-                else
-                {
-                    header('500 Internal Server Error first', true, 404);
-                }
+
+                $sql = "INSERT INTO `$table` (`ID`, `Person`, `Text`, `Date`) VALUES ('$id', '$person', '$text', '$date')";	
                 
 				$result = mysqli_query($DBConnect, $sql);  
 

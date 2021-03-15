@@ -2,7 +2,7 @@
 class DELETE 
 {
  
-    function DeleteData($databaseName, $table, $userinfo) 
+    function DeleteData($databaseName, $table, $whereValue) 
     {
         if($databaseName) 
         {		
@@ -16,29 +16,60 @@ class DELETE
             } 
             else
             {
-
-                $infoArray = explode("|", $userinfo);
                 $sql = "";
 
-                if($infoArray && $table)
-                {
-                    $sql = "DELETE FROM `$table` WHERE ";
+   
+                $sql = "DELETE FROM `$table` WHERE ";
+                $sql.=$whereValue;
+                $sql = substr($sql, 0, -5);
 
-                    foreach($infoArray as $item)
-                    {
-                        $WhereClause = explode("=", $item);
-                        $sql = "".$sql."".$WhereClause[0]." = '$WhereClause[1]' AND ";
-                    }
+                $result = mysqli_query($DBConnect, $sql);  
 
-                    $sql = substr($sql, 0, -5);
-                    $result = mysqli_query($DBConnect, $sql);  
-    
-                    if($result)
-                    {	 	
-                        echo "De row/rows zijn verwijderd";
-                    }
+                if($result)
+                {	 	
+                    echo "De row/rows zijn verwijderd";
                 }
+                
             }
         }	
-    }   
+    }
+    
+    function CreateWhereStatement($tableValue, $id, $person, $text, $date)
+    {
+        $whereSet = false;
+
+        if($id == "" && $person == "" && $text == "" && $date == "")
+        {
+            $whereValue = 66;
+        }
+        else
+        {
+            $whereValue = "";
+
+            if($id != "" && $whereSet == false)
+            {
+                $whereValue.= "$tableValue.ID = '$id' AND ";
+                //$whereSet = true;
+            }
+    
+            if($person != "" && $whereSet == false)
+            {
+                $whereValue.= "$tableValue.Person = '$person' AND ";
+                //$whereSet = true;
+            }
+    
+            if($text != "" && $whereSet == false)
+            {
+                $whereValue.= "$tableValue.Text = '$text' AND ";
+                //$whereSet = true;
+            }
+    
+            if($date != "" && $whereSet == false)
+            {
+                $whereValue.= "$tableValue.Date = '$date' AND ";
+                //$whereSet = true;
+            }
+        }
+        return $whereValue;
+    }
 }

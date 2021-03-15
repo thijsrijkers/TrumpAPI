@@ -16,55 +16,43 @@ class PUT
             } 
             else
             {
-                $setArray = explode("|", $setValue);
+                $sql = "UPDATE $table SET $setValue WHERE $whereValue;";
 
-                if($whereValue != 66)
-                {
-                    $whereArray = explode("|", $whereValue);
-                }
-
-                if($table)
-                {
-                    $updateString = "UPDATE $table";
-                    $setString = $updateString;
-                }
-           
-                if(isset($setArray))
-                {
-                    $setString.= " SET ";
-
-                    foreach($setArray as $item)
-                    {
-                        $setClause = explode("=", $item);
-                        $setString = "".$setString."".$setClause[0]." = '$setClause[1]', ";
-                    }
-
-                    $sql = substr($setString, 0, -2);
-                }  
-
-                if(isset($whereArray))
-                {
-                    $whereString = $sql;
-                    $whereString.= " WHERE ";
-
-                    foreach($whereArray as $item)
-                    {
-                        $WhereClause = explode("=", $item);
-                        $whereString = "".$whereString."".$WhereClause[0]." = '$WhereClause[1]' OR ";
-                    }
-
-                    $sql = substr($whereString, 0, -4);
-                }
-
-                $sql.= ";";
                 $result = mysqli_query($DBConnect, $sql);  
     
                 if($result)
                 {	 	
                     echo "De row/rows zijn geupdate";
                 }
+                else{
+                    echo "500 Internal Server Error last";
+                }
             }
         }	
+    }
+
+    function CreateSet($setValue)
+    {
+ 
+        $substr = '=';
+        $attachment = "'";
+
+        $setValue  = str_replace($substr, $substr.$attachment, $setValue);
+        $setValue.="'";
+
+        return $setValue;
+    }
+
+    function CreateWhere($whereValue)
+    {
+ 
+        $substr = '=';
+        $attachment = "'";
+
+        $whereValue  = str_replace($substr, $substr.$attachment, $whereValue);
+        $whereValue.="'";
+
+        return $whereValue;
     }
     
 }
