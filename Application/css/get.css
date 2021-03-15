@@ -1,0 +1,50 @@
+#tableGet{
+    position: relative;
+    width: 15vw;
+    padding: 10px 15px;
+    background: #554e60;
+    border-left: 5px solid rgb(104, 94, 122);
+    cursor: pointer;
+    outline: none;
+    color: white;
+    top: 5vh;
+    left: 18vw;
+}
+
+#dataTypeGet{
+    position: relative;
+    width: 15vw;
+    padding: 10px 15px;
+    background: #554e60;
+    border-left: 5px solid rgb(104, 94, 122);
+    cursor: pointer;
+    outline: none;
+    color: white;
+    top: 5vh;
+    left: 18vw;
+}
+
+#queryInfo{
+    position: relative;
+    width: 15vw;
+    padding: 10px 15px;
+    background: #554e60;
+    border-left: 5px solid rgb(104, 94, 122);
+    cursor: pointer;
+    outline: none;
+    color: white;
+    top: 20vh;
+    left: 18vw;
+}
+#GetButton{
+    position: relative;
+    width: 15vw;
+    padding: 10px 15px;
+    background: #554e60;
+    border-left: 5px solid rgb(104, 94, 122);
+    cursor: pointer;
+    outline: none;
+    color: white;
+    top: 20vh;
+    left: 18vw;
+}

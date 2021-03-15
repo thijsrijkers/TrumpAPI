@@ -67,4 +67,8 @@ h1{
 
 #Result{
     color: white;
+    width: 50vw;
+    height: 75vh;
+    white-space: nowrap;
+    overflow: auto
 }

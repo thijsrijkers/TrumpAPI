@@ -3,6 +3,8 @@
     <head> 
         <link rel="stylesheet" href="css/index.css">
         <link rel="stylesheet" href="css/home.css">
+        <link rel="stylesheet" href="css/get.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="js/application.js"></script>
     </head> 
     <body> 

@@ -4,21 +4,8 @@ var selectTables = false;
 function SetGRUD(){
     CRUD = document.getElementById('CRUD').value;
 
-    if(CRUD == "GET")
-    {
-        let url = 'http://localhost/TrumpAPI/public/api.php/trumpapi/*/debate/Text=(APPLAUSE)';
-
-        fetch(url)
-        .then(res => res.json())
-        .then((out) => {
-        console.log('Checkout my JSON ', out);
-        })
-        .catch(err => { throw err });
-
-    }
     document.getElementById("Home").style.display = "none";
     document.getElementById(""+CRUD+"").style.display = "block";
-    alert('You have selected: '+CRUD+'');
 }
 
 function SetCheckboxOption(value)
@@ -42,5 +29,64 @@ function SetGetButton()
     } else {
         document.getElementById("GetButton").style.display = "none";
     }
+}
+
+function GetInfo()
+{
+    var table = document.getElementById('tableGet').value;
+    var dataType = document.getElementById('dataTypeGet').value;
+    var idInput = document.getElementById('getID');
+    if(idInput.value != "")
+    {
+        var idInput = document.getElementById('getID').value;
+    }
+    else
+    {
+        idInput = ""
+    }
+
+    document.getElementById(""+CRUD+"").style.display = "none";
+
+    var getString = "";
+    if(idInput != "")
+    {
+        var getString = "http://localhost/TrumpAPI/public/api.php/"+dataType+"/"+table+"/"+idInput+""
+    }
+    else
+    {
+        var getString = "http://localhost/TrumpAPI/public/api.php/"+dataType+"/"+table+""
+    }
+    
+    if(dataType == "JSON")
+    {
+        $.getJSON(getString, function(data) {
+            var items = [];
+            $.each(data, function(key, val, val2) {
+                items.push("<li id='" + key + "'>" + val["ID"] + "</li>");
+                items.push("<li id='" + key + "'>" + val["Person"] + "</li>");
+                items.push("<li id='" + key + "'>" + val["Text"] + "</li>");
+                items.push("<li id='" + key + "'>" + val["Date"] + "</li>");
+                items.push("<br>");
+            });
+
+            $("<ul/>", {
+                "class": "JsonFromAPI",
+                html: items.join("")
+            }).appendTo("#Result");
+        });
+    }
+    else
+    {
+        var x = new XMLHttpRequest();
+        x.open("GET", getString, true);
+    
+            if (x.status == 200)
+            {
+                console.log(x.responseXML);
+            }
+        
+    }
+    document.getElementById("Result").style.display = "block";
+
 }
 
