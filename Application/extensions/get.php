@@ -13,4 +13,4 @@
     ID    = <input type="text"name="getID" id="getID"><br>
 </div>
 <br>
-<button id="GetButton" onclick="GetInfo()"> Volgende </button>
+<button id="GetButton" onclick="GetInfo()"> Get info </button>

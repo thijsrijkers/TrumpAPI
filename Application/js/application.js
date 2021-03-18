@@ -90,3 +90,31 @@ function GetInfo()
 
 }
 
+function DeleteInfo()
+{
+    var table = document.getElementById('tableDelete').value;
+    var idInput = document.getElementById('deleteID');
+
+    if(idInput.value != "")
+    {
+        var idInput = document.getElementById('deleteID').value;
+    }
+    else
+    {
+        idInput = ""
+    }
+
+    document.getElementById(""+CRUD+"").style.display = "none";
+
+    var getString = "";
+    if(idInput != "")
+    {
+        var getString = "http://localhost/TrumpAPI/public/api.php/"+table+"/"+idInput+""
+    } 
+
+    document.getElementById("Result").style.display = "block";
+
+    return fetch(getString, {
+        method: 'DELETE'
+    }).then(document.getElementById('Result').innerText = "Data deleted")
+}
