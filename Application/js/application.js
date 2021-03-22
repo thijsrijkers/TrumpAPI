@@ -174,3 +174,54 @@ function PostInfo()
         body: JSON.stringify(_body)
     }).then(document.getElementById('Result').innerText = "Data posted")
 }
+
+
+function PutInfo()
+{
+    var table = document.getElementById('tablePut').value;
+    var idInput = document.getElementById('putID');
+    var personInput = document.getElementById('putPerson');
+    var textInput =  document.getElementById('putText');
+    var dateInput =  document.getElementById('putDate');
+
+    if(idInput.value != "")
+    {
+        var idInput = document.getElementById('putID').value;
+        var personInput = document.getElementById('putPerson').value;
+        var textInput =  document.getElementById('putText').value;
+        var dateInput =  document.getElementById('putDate').value;
+    }
+    else
+    {
+        idInput = "";
+        personInput = "";
+        textInput =  "";
+        dateInput =  "";
+    }
+
+    document.getElementById(""+CRUD+"").style.display = "none";
+
+    var getString = "";
+    let _body = "";
+    if(idInput != "")
+    {
+        var getString = "http://localhost/TrumpAPI/public/api.php/"+table+"/"+idInput+"";
+        
+        _body = {
+            person : personInput,
+            text : textInput,
+            date : dateInput
+        }
+        console.log(getString);
+        console.log(_body);
+    }
+    document.getElementById("Result").style.display = "block";
+
+    return fetch(getString, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(_body)
+    }).then(document.getElementById('Result').innerText = "Data changed")
+}
