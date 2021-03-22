@@ -5,6 +5,7 @@
         <link rel="stylesheet" href="css/home.css">
         <link rel="stylesheet" href="css/get.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ajv/7.2.3/ajv7.min.js"></script>
         <script src="js/application.js"></script>
     </head> 
     <body> 

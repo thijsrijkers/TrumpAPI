@@ -17,11 +17,10 @@ class POST
             else
             {
                 $data = json_decode($body, true);
-    
                 $sql = "INSERT INTO `$table` (`ID`, `Person`, `Text`, `Date`) VALUES ('$data[id]', '$data[person]', '$data[text]', '$data[date]')";	
                 
 				$result = mysqli_query($DBConnect, $sql);  
-
+                
 				if($result)
 				{	 	
 					echo "De row/rows zijn toegevoegd";

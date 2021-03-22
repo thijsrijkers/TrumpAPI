@@ -59,6 +59,13 @@ function GetInfo()
     
     if(dataType == "JSON")
     {
+        var ajv = new Ajv();
+        var valid = ajv.validate("../Schema/json_schema.json", getString);
+        if(!valid)
+        {
+            console(ajv.errors);
+        }
+
         $.getJSON(getString, function(data) {
             var items = [];
             $.each(data, function(key, val, val2) {
@@ -117,4 +124,53 @@ function DeleteInfo()
     return fetch(getString, {
         method: 'DELETE'
     }).then(document.getElementById('Result').innerText = "Data deleted")
+}
+
+function PostInfo()
+{
+    var table = document.getElementById('tablePost').value;
+    var idInput = document.getElementById('postID');
+    var personInput = document.getElementById('postPerson');
+    var textInput =  document.getElementById('postText');
+    var dateInput =  document.getElementById('postDate');
+
+    if(idInput.value != "")
+    {
+        var idInput = document.getElementById('postID').value;
+        var personInput = document.getElementById('postPerson').value;
+        var textInput =  document.getElementById('postText').value;
+        var dateInput =  document.getElementById('postDate').value;
+    }
+    else
+    {
+        idInput = "";
+        personInput = "";
+        textInput =  "";
+        dateInput =  "";
+    }
+
+    document.getElementById(""+CRUD+"").style.display = "none";
+
+    var getString = "";
+    let _body = "";
+    if(idInput != "")
+    {
+        var getString = "http://localhost/TrumpAPI/public/api.php/"+table+"";
+        
+        _body = {
+            id : idInput,
+            person : personInput,
+            text : textInput,
+            date : dateInput
+        }
+    }
+    document.getElementById("Result").style.display = "block";
+
+    return fetch(getString, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(_body)
+    }).then(document.getElementById('Result').innerText = "Data posted")
 }
