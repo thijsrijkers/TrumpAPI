@@ -31,7 +31,7 @@ function SetGetButton()
     }
 }
 
-function GetInfo()
+async function GetInfo()
 {
     var table = document.getElementById('tableGet').value;
     var dataType = document.getElementById('dataTypeGet').value;
@@ -50,37 +50,25 @@ function GetInfo()
     var getString = "";
     if(idInput != "")
     {
-        var getString = "http://localhost/TrumpAPI/public/api.php/"+dataType+"/"+table+"/"+idInput+""
+        var getString = "http://localhost/TrumpAPI/public/api.php/"+table+"/"+idInput+""
     }
     else
     {
-        var getString = "http://localhost/TrumpAPI/public/api.php/"+dataType+"/"+table+""
+        var getString = "http://localhost/TrumpAPI/public/api.php/"+table+""
     }
     
     if(dataType == "JSON")
     {
-        var ajv = new Ajv();
-        var valid = ajv.validate("../Schema/json_schema.json", getString);
-        if(!valid)
-        {
-            console(ajv.errors);
-        }
-
-        $.getJSON(getString, function(data) {
-            var items = [];
-            $.each(data, function(key, val, val2) {
-                items.push("<li id='" + key + "'>" + val["ID"] + "</li>");
-                items.push("<li id='" + key + "'>" + val["Person"] + "</li>");
-                items.push("<li id='" + key + "'>" + val["Text"] + "</li>");
-                items.push("<li id='" + key + "'>" + val["Date"] + "</li>");
-                items.push("<br>");
-            });
-
-            $("<ul/>", {
-                "class": "JsonFromAPI",
-                html: items.join("")
-            }).appendTo("#Result");
+        const myRequest = new Request(getString, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
         });
+         
+        var response = await fetch(myRequest)
+        console.log(await response.json()); 
+        printJsonResult(await response);   
     }
     else
     {
@@ -95,6 +83,25 @@ function GetInfo()
     }
     document.getElementById("Result").style.display = "block";
 
+}
+
+async function printJsonResult(value) 
+{ 
+    $.getJSON(value, function(data) {
+        var items = [];
+        $.each(data, function(key, val, val2) {
+            items.push("<li id='" + key + "'>" + val["ID"] + "</li>");
+            items.push("<li id='" + key + "'>" + val["Person"] + "</li>");
+            items.push("<li id='" + key + "'>" + val["Text"] + "</li>");
+            items.push("<li id='" + key + "'>" + val["Date"] + "</li>");
+            items.push("<br>");
+        });
+
+        $("<ul/>", {
+            "class": "JsonFromAPI",
+            html: items.join("")
+        }).appendTo("#Result");
+    })    
 }
 
 function DeleteInfo()

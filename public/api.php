@@ -30,7 +30,7 @@ $app->get('/{tableValue}', function (Request $request, Response $response, array
 {
 	$databaseName = "trumpapi";
 
-	$dataType = $request->getAttribute('dataType');
+	$dataType = $request->getHeader('Content-Type');
 	$tableValue =$request->getAttribute('tableValue');
 
 	if($dataType[0] == 'application/json' || $dataType[0] == 'application/xml')
