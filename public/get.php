@@ -50,8 +50,8 @@ class GET
 
         if($result)
         {	 	
-            
-            if($dataType == "XML")
+
+            if($dataType == 'application/xml')
             {
                 $xml=new SimpleXMLElement("<TrumpAPI/>");
                 $xml->addChild('Data','');
@@ -66,7 +66,7 @@ class GET
                 echo $xml->asXML();
 
             }
-            else if($dataType == "JSON")
+            else
             {
                 $data = array();  
         
