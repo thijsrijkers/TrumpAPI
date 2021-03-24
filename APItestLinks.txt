@@ -1,5 +1,5 @@
-http://localhost/TrumpAPI/public/api.php/JSON/debates/69							/////get
-http://localhost/TrumpAPI/public/api.php/XML/debates  								/////get
+http://localhost/TrumpAPI/public/api.php/debates/69								/////get
+http://localhost/TrumpAPI/public/api.php/debates  								/////get
 
 http://localhost/TrumpAPI/public/api.php/debates
 

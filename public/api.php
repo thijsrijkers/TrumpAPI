@@ -12,7 +12,7 @@ $app->get('/{tableValue}/{idValue}', function (Request $request, Response $respo
 {
 	$databaseName = "trumpapi";
 
-	$dataType = $request->getHeader('Content-Type');
+	$dataType = $request->getHeader('Accept');
 	$tableValue = $request->getAttribute('tableValue');
 	$id = $request->getAttribute('idValue');
 
@@ -30,7 +30,7 @@ $app->get('/{tableValue}', function (Request $request, Response $response, array
 {
 	$databaseName = "trumpapi";
 
-	$dataType = $request->getHeader('Content-Type');
+	$dataType = $request->getHeader('Accept');
 	$tableValue =$request->getAttribute('tableValue');
 
 	if($dataType[0] == 'application/json' || $dataType[0] == 'application/xml')

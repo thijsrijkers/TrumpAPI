@@ -57,50 +57,36 @@ async function GetInfo()
         var getString = "http://localhost/TrumpAPI/public/api.php/"+table+""
     }
     
-    if(dataType == "JSON")
-    {
-        const myRequest = new Request(getString, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        });
-         
-        var response = await fetch(myRequest)
-        console.log(await response.json()); 
-        printJsonResult(await response);   
-    }
-    else
-    {
-        var x = new XMLHttpRequest();
-        x.open("GET", getString, true);
+    const myRequest = new Request(getString, {
+        method: 'GET',
+        headers: {
+            'Accept': 'application/json'
+        }
+    });
+        
+    var response = await fetch(myRequest)
+    //console.log(await response.json()); 
+    printJsonResult(await response.json());   
     
-        if (x.status == 200)
-        {
-            console.log(x.responseXML);
-        }  
-    }
 
     document.getElementById("Result").style.display = "block";
 }
 
-async function printJsonResult(value) 
+async function printJsonResult(data) 
 { 
-    $.getJSON(value, function(data) {
-        var items = [];
-        $.each(data, function(key, val, val2) {
-            items.push("<li id='" + key + "'>" + val["ID"] + "</li>");
-            items.push("<li id='" + key + "'>" + val["Person"] + "</li>");
-            items.push("<li id='" + key + "'>" + val["Text"] + "</li>");
-            items.push("<li id='" + key + "'>" + val["Date"] + "</li>");
-            items.push("<br>");
-        });
+    var items = [];
+    $.each(data, function(key, val, val2) {
+        items.push("<li id='" + key + "'>" + val["ID"] + "</li>");
+        items.push("<li id='" + key + "'>" + val["Person"] + "</li>");
+        items.push("<li id='" + key + "'>" + val["Text"] + "</li>");
+        items.push("<li id='" + key + "'>" + val["Date"] + "</li>");
+        items.push("<br>");
+    });
 
-        $("<ul/>", {
-            "class": "JsonFromAPI",
-            html: items.join("")
-        }).appendTo("#Result");
-    })    
+    $("<ul/>", {
+        "class": "JsonFromAPI",
+        html: items.join("")
+    }).appendTo("#Result");    
 }
 
 function DeleteInfo()
