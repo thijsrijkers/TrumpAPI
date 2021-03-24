@@ -75,14 +75,13 @@ async function GetInfo()
         var x = new XMLHttpRequest();
         x.open("GET", getString, true);
     
-            if (x.status == 200)
-            {
-                console.log(x.responseXML);
-            }
-        
+        if (x.status == 200)
+        {
+            console.log(x.responseXML);
+        }  
     }
-    document.getElementById("Result").style.display = "block";
 
+    document.getElementById("Result").style.display = "block";
 }
 
 async function printJsonResult(value) 
