@@ -34,7 +34,6 @@ function SetGetButton()
 async function GetInfo()
 {
     var table = document.getElementById('tableGet').value;
-    var dataType = document.getElementById('dataTypeGet').value;
     var idInput = document.getElementById('getID');
     if(idInput.value != "")
     {
