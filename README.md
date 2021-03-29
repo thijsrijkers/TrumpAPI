@@ -33,6 +33,29 @@ Als er meerdere vragen zijn over deze API wordt er graag contact gelegd.
 </table>
 
 <br>
+<h2> Documentation Examples</h2>
+
+<h3< GET Get debate</h3>
+<pre>
+{url/{tableValue}</pre>
+<h4>Headers</h4>
+JSON:
+<pre>
+Accept application/json </pre>
+XML:
+<pre>
+Accept application/xml</pre>
+
+<h3< GET Get debate by ID</h3>
+<pre>
+{url/{tableValue}/{idValue}</pre>
+<h4>Headers</h4>
+JSON:
+<pre>
+Accept application/json </pre>
+XML:
+<pre>
+Accept application/xml</pre>
 
 <h2> Documentation</h2>
 <h3> URL API conventions</h3>
