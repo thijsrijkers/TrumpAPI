@@ -161,12 +161,16 @@ a API that uses datasets of the 2016  elections
 }
 </pre>
 </td>
-<td><body>
+<td>
+<pre>
+<body>
 	<id> 469 </id>
 	<person> thijs </person>
 	<text> test </text>
 	<date> 10/26/16 </date>
-</body></td>
+</body>
+</pre>
+</td>
 </tr>
 
 
