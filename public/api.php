@@ -46,11 +46,9 @@ $app->delete('/{table}/{idValue}', function (Request $request, Response $respons
 {	
 	$databaseName = "trumpapi";
 
-	$dataType = $request->getHeader('Content-Type');
 	$tableValue = $request->getAttribute('table');
 	$id = $request->getAttribute('idValue');
 	
-
 	require "delete.php";
 	
 	$delete = new DELETE();
@@ -71,10 +69,17 @@ $app->put('/{table}/{idValue}', function (Request $request, Response $response)
 
 	if($dataType[0] == 'application/json')
 	{
-		require "put.php";
+		$validator = new JsonSchema\Validator();
+        $data = json_decode($body, true);
+        $validator->validate($data, (object) ['$ref' => 'file://' . realpath('Schema/json_schema.json')]);
 
-		$put = new PUT();
-		$put->UpdateData($databaseName, $table, $id, $body);	
+		if ($validator->isValid()) {
+			require "put.php";
+
+			$put = new PUT();
+			$put->UpdateData($databaseName, $table, $id, $body);	
+		}
+
 	}
 });
 
@@ -89,11 +94,18 @@ $app->post('/{table}', function (Request $request, Response $response)
 
 	if($dataType[0] == 'application/json')
 	{
-		require "post.php";
+		$validator = new JsonSchema\Validator();
+        $data = json_decode($body, true);
+        $validator->validate($data, (object) ['$ref' => 'file://' . realpath('Schema/json_schema.json')]);
+
+		if ($validator->isValid()) {
+			require "post.php";
 		
-		$post = new POST();
-		$post->InsertData($databaseName, $table, $body);	
-	}	
+			$post = new POST();
+			$post->InsertData($databaseName, $table, $body);	
+		}
+
+	}
 });
 
 $app->run();
