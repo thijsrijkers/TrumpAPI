@@ -45,6 +45,7 @@ Accept application/json </pre>
 XML:
 <pre>
 Accept application/xml</pre>
+<hr>
 
 <h3> GET Get debate by ID</h3>
 <pre>
@@ -56,6 +57,42 @@ Accept application/json </pre>
 XML:
 <pre>
 Accept application/xml</pre>
+<hr>
+
+
+<h3> POST Create new debate</h3>
+<pre>
+{url/{tableValue}</pre>
+<h4>Headers</h4>
+JSON:
+<pre>
+Accept application/json </pre>
+XML:
+<pre>
+Accept application/xml</pre>
+
+<h4>Body</h4>
+JSON:
+<pre>
+{
+   "id": "469",
+   "person" : "thijs",
+   "text" : "test",
+   "date"    : "10/26/16"
+}
+</pre>
+
+XML:
+<pre>
+
+	<body>
+		<id> 469 </id>
+		<person> thijs </person>
+		<text> test </text>
+		<date> 10/26/16 </date>
+	</body>
+</pre>
+<hr>
 
 <h2> Documentation</h2>
 <h3> URL API conventions</h3>
