@@ -175,6 +175,29 @@ a API that uses datasets of the 2016  elections
 </td>
 </tr>
 
+<td>PUT</td>
+<td>http://localhost/TrumpAPI/public/api.php/debates/420</td>
+<td>
+<pre>
+{
+   "person" : "thijs",
+   "text" : "test",
+   "date"    : "10/26/16"
+}
+</pre>
+</td>
+<td>
+<pre>
+
+	<body>
+		<person> thijs </person>
+		<text> test </text>
+		<date> 10/26/16 </date>
+	</body>
+
+</pre>
+</td>
+</tr>
 
 </tbody>
 </table>
