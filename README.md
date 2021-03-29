@@ -135,7 +135,7 @@ XML:
 {url}/{tableValue}/{idValue}</pre>
 Example: http://localhost/TrumpAPI/public/api.php/debates/469
 
-<br>
+<br><br><br>
 <h2> Documentation</h2>
 <h3> URL API conventions</h3>
 
