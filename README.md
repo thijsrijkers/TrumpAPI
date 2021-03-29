@@ -1,10 +1,6 @@
 # TrumpAPI
 a API that uses datasets of the 2016  elections
 
-<h2> Progression GIF</h2>
-
-<p><img src="https://media1.giphy.com/media/2lOPJMehh7bwB2SyIB/giphy.gif" width="480" height="256"> </p>
-<br>
 
 <h2> Changes to XAMPP needed</h2>
 <table>
@@ -49,34 +45,6 @@ a API that uses datasets of the 2016  elections
 </table>
 
 <h3> URL API conventions</h3>
-<table>
-<thead>
-<tr>
-<th>URL symbol convention</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
- 
-<tr>
-<td>|</td>
-<td>This means a AND statement, for example if you want two tables: FROM debate, tweets.</td>
-</tr>
-<tr>
-<td>=</td>
-<td>This symbol stands for the = symbol in a SQL query. This will be used if you want to use a where for example</td>
-</tr>
-<td>@</td>
-<td>Because a extra / in your URL can mess with the API, this is the replacement for in the URL. For example you want to use a date, instead of 09/01/2021 you write for the URL 09@01@2021</td>
-</tr>
-</tr>
-<td>66</td>
-<td>Because the user can choose to not use a where in a get for example you need to enter 66 to say to the API that there is no where clause necessary</td>
-</tr>
-</tbody>
-</table>
-
-<br>
 
 <table>
 <thead>
@@ -93,19 +61,60 @@ a API that uses datasets of the 2016  elections
 </tr>
 <tr>
 <td>GET</td>
-<td>/{dataType}/{tableValue}/search?</td>
+<td>{tableValue}</td>
+</tr>
+<tr>
+<td>GET with id</td>
+<td>{tableValue}/{idValue}</td>
 </tr>
 <tr>
 <td>PUT</td>
-<td>{databasename}/{tableValue}/{setValue}/{whereValue}</td>
+<td>{tableValue}/{idValue}/td>
 </tr>
 <tr>
 <td>POST</td>
-<td>{databasename}/{tableValue}/{userInfo}</td>
+<td>{tableValue}</td>
 </tr>
 <tr>
 <td>DELETE</td>
-<td>{databasename}/{tableValue}/{userInfo}</td>
+<td>{tableValue}/{idValue}</td>
+</tr>
+</tbody>
+</table>
+
+<h4> Headers for request</h4>
+
+<table>
+<thead>
+<tr>
+<th>API request</th>
+<th>XML</th>
+ <th>JSON</th>
+</tr>
+</thead>
+<tbody>
+ 
+<tr>
+<td>GET</td>
+<td>Accept application/xml</td>
+<td>Accept application/json</td>
+</tr>
+
+<tr>
+<td>DELETE</td>
+<td>N.V.T</td>
+<td>N.V.T</td>
+</tr>
+
+<tr>
+<td>PUT</td>
+<td>Content-Type application/xml</td>
+<td>Content-Type application/json</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Content-Type application/xml</td>
+<td>Content-Type application/json</td>
 </tr>
 </tbody>
 </table>
