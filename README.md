@@ -16,6 +16,15 @@ a API that uses datasets of the 2016  elections
 Om deze API up and running te krijgen, moeten er bepaalde dingen eerst gebeuren. In de folder 'database' staat een .SQL bestand. Dit is de database waar de API mee gaat communiceren. Hiervoor is tijdens het bouwen PHPmyAdmin gebruikt. Om het .SQL bestand te gebruiken, moet de gebruiker een database aanmaken genaamd: "trumpapi". In deze database moet de .SQL bestand worden geimporteerd. Als dit zonder problemen is gelukt, zal dit direct goed moeten staan.
 <br><br>
 Nu zal een localhost de API moeten kunnen draaien. Voor een localhost wordt XAMPP aanbevolen omdat de API hiermee ook is gedeveloped. Is dit ook allemaal up and running, dan zal de gebruiker eerst de API kunnen testen. Voor het testen van de API door de ontwikkelaar is de volgende Chrome extension gebruikt: https://chrome.google.com/webstore/detail/resteasy/nojelkgnnpdmhpankkiikipkmhgafoch
+<br>
+Met deze extension kan heel makkelijk request worden aangemaakt on the fly en dit was ook de reden waarom hiervoor is gekozen inplaats van bijvoorbeeld Postman. Alle benodigde informatie om een request aan te maken, zijn gedocumenteerd in het hoofdstuk 'Documentation'.
+<br>
+Nu de API ook werkt, kan er naar de applicatie worden genavigeerd. Deze zal te vinden zijn via de volgende link als de gebruiker XAMPP gebruikt: http://localhost/TrumpAPI/application/index.php
+<br>
+De applicatie is een makkelijk punt om de API te gebruiken. Eerst zal de benodige crud operatie gekozen moeten worden. Hierna zal de gebruiken zijn gewenste onderwerp moeten selecteren en de bijbehorende informatie moet invullen. Als er nu lokaal gekeken word heeft de gebruiker succesvol de API gebruikt via het programma.
+<br><br><br>
+Als er meerdere vragen zijn over deze API wordt er graag contact gelegd.
+<br><br>
 
 
 <tr>
