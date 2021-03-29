@@ -113,8 +113,8 @@ Content-Type application/xml</pre>
 JSON:
 <pre>
 {
-   "person" : "thijs",
-   "text" : "test",
+   "person" : "Changed",
+   "text" : "Changed",
    "date"    : "10/26/16"
 }
 </pre>
@@ -122,8 +122,8 @@ JSON:
 XML:
 ```xml
 <body>
-	<person> thijs </person>
-	<text> test </text>
+	<person> Changed </person>
+	<text> Changed </text>
 	<date> 10/26/16 </date>
 </body>
 ```
