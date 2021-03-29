@@ -208,8 +208,8 @@ Als er meerdere vragen zijn over deze API wordt er graag contact gelegd.
 <pre>
 
 	<body>
-		<person> thijs </person>
-		<text> test </text>
+		<person> Notthijs </person>
+		<text> AgainAtest </text>
 		<date> 10/26/16 </date>
 	</body>
 
