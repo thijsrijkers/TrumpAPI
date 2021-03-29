@@ -75,7 +75,7 @@ Als er meerdere vragen zijn over deze API wordt er graag contact gelegd.
 
 <b> A example of a GET url: http://localhost/TrumpAPI/public/api.php/debates/69</b>
 
-<br><br>
+<br>
 <h4> Headers for request</h4>
 
 <table>
