@@ -198,8 +198,8 @@ Als er meerdere vragen zijn over deze API wordt er graag contact gelegd.
 <td>
 <pre>
 {
-   "person" : "thijs",
-   "text" : "test",
+   "person" : "Notthijs",
+   "text" : "AgainAtest",
    "date"    : "10/26/16"
 }
 </pre>
