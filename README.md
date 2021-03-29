@@ -36,29 +36,29 @@ Als er meerdere vragen zijn over deze API wordt er graag contact gelegd.
 <h2> Documentation Examples</h2>
 
 <h3> GET Get debate</h3>
-<pre>
-{url}/{tableValue}</pre>
-http://localhost/TrumpAPI/public/api.php/debates
-<h4>Headers</h4>
-JSON:
-<pre>
-Accept application/json </pre>
-XML:
-<pre>
-Accept application/xml</pre>
+	<pre>
+	{url}/{tableValue}</pre>
+	http://localhost/TrumpAPI/public/api.php/debates
+	<h4>Headers</h4>
+	JSON:
+	<pre>
+	Accept application/json </pre>
+	XML:
+	<pre>
+	Accept application/xml</pre>
 <hr>
 
 <h3> GET Get debate by ID</h3>
-<pre>
-{url}/{tableValue}/{idValue}</pre>
-Example: http://localhost/TrumpAPI/public/api.php/debates/5
-<h4>Headers</h4>
-JSON:
-<pre>
-Accept application/json </pre>
-XML:
-<pre>
-Accept application/xml</pre>
+	<pre>
+	{url}/{tableValue}/{idValue}</pre>
+	Example: http://localhost/TrumpAPI/public/api.php/debates/5
+	<h4>Headers</h4>
+	JSON:
+	<pre>
+	Accept application/json </pre>
+	XML:
+	<pre>
+	Accept application/xml</pre>
 <hr>
 
 
