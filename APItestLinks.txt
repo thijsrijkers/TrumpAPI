@@ -12,6 +12,13 @@ http://localhost/TrumpAPI/public/api.php/debates
    "date"    : "10/26/16"
 }														/////post
 
+<body>
+	<id> 1 </id>
+	<person> 1 </person>
+	<text> 1 </text>
+	<date> 1 </date>
+</body>
+
 http://localhost/TrumpAPI/public/api.php/Tweets/69								/////delete
 
 http://localhost/TrumpAPI/public/api.php/debates/420
@@ -20,3 +27,9 @@ http://localhost/TrumpAPI/public/api.php/debates/420
    "text" : "test",
    "date"    : "10/26/16"
 }														/////put
+
+<body>
+	<person> 1 </person>
+	<text> 1 </text>
+	<date> 1 </date>
+</body>
