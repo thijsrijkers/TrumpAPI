@@ -3,6 +3,8 @@ a API that uses datasets of the 2016  elections
 
 
 <h2> Installation</h2>
+<b> VOOR DAT U GAAT LEZEN, ER IS GEEN REKENING GEHOUDEN MET PREMISSIES IN UW XAMPP. DUS AL U NIET KAN CONNECTEN MET EEN DATABASE KAN HIER DE OORZAAK LIGGEN! </b>
+<br><br>
 Om deze API up and running te krijgen, moeten er bepaalde dingen eerst gebeuren. In de folder 'database' staat een .SQL bestand. Dit is de database waar de API mee gaat communiceren. Hiervoor is tijdens het bouwen PHPmyAdmin gebruikt. Om het .SQL bestand te gebruiken, moet de gebruiker een database aanmaken genaamd: "trumpapi". In deze database moet de .SQL bestand worden geimporteerd. Als dit zonder problemen is gelukt, zal dit direct goed moeten staan.
 <br><br><br>
 Nu zal een localhost de API moeten kunnen draaien. Voor een localhost wordt XAMPP aanbevolen omdat de API hiermee ook is gedeveloped. Is dit ook allemaal up and running, dan zal de gebruiker eerst de API kunnen testen. Voor het testen van de API door de ontwikkelaar is de volgende Chrome extension gebruikt: https://chrome.google.com/webstore/detail/resteasy/nojelkgnnpdmhpankkiikipkmhgafoch
