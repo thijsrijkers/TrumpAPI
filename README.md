@@ -2,16 +2,6 @@
 a API that uses datasets of the 2016  elections
 
 
-<h2> Changes to XAMPP needed</h2>
-<table>
-<thead>
-<tr>
-<th>Change</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-
 <h2> Installation</h2>
 Om deze API up and running te krijgen, moeten er bepaalde dingen eerst gebeuren. In de folder 'database' staat een .SQL bestand. Dit is de database waar de API mee gaat communiceren. Hiervoor is tijdens het bouwen PHPmyAdmin gebruikt. Om het .SQL bestand te gebruiken, moet de gebruiker een database aanmaken genaamd: "trumpapi". In deze database moet de .SQL bestand worden geimporteerd. Als dit zonder problemen is gelukt, zal dit direct goed moeten staan.
 <br><br><br>
@@ -26,7 +16,15 @@ De applicatie is een makkelijk punt om de API te gebruiken. Eerst zal de benodig
 Als er meerdere vragen zijn over deze API wordt er graag contact gelegd.
 <br><br>
 
-
+<h2> Changes to XAMPP needed</h2>
+<table>
+<thead>
+<tr>
+<th>Change</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td>memory_limit</td>
 <td>In your PHP.ini file of your XAMPP you need to change the memory_limit to 1024M because the data can be to great to handle for XAMPP</td>
