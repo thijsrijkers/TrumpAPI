@@ -37,7 +37,8 @@ Als er meerdere vragen zijn over deze API wordt er graag contact gelegd.
 
 <h3> GET Get debate</h3>
 <pre>
-{url/{tableValue}</pre>
+{url}/{tableValue}</pre>
+http://localhost/TrumpAPI/public/api.php/debates
 <h4>Headers</h4>
 JSON:
 <pre>
@@ -49,7 +50,8 @@ Accept application/xml</pre>
 
 <h3> GET Get debate by ID</h3>
 <pre>
-{url/{tableValue}/{idValue}</pre>
+{url}/{tableValue}/{idValue}</pre>
+Example: http://localhost/TrumpAPI/public/api.php/debates/5
 <h4>Headers</h4>
 JSON:
 <pre>
@@ -62,14 +64,15 @@ Accept application/xml</pre>
 
 <h3> POST Create new debate</h3>
 <pre>
-{url/{tableValue}</pre>
+{url}/{tableValue}</pre>
+Example: http://localhost/TrumpAPI/public/api.php/debates
 <h4>Headers</h4>
 JSON:
 <pre>
-Accept application/json </pre>
+Content-Type application/json </pre>
 XML:
 <pre>
-Accept application/xml</pre>
+Content-Type application/xml</pre>
 
 <h4>Body</h4>
 JSON:
@@ -92,6 +95,48 @@ XML:
 </body>
 ```
 <hr>
+
+
+<h3> PUT Edit a debate</h3>
+<pre>
+{url}/{tableValue}/{idValue}</pre>
+Example: http://localhost/TrumpAPI/public/api.php/debates/469
+<h4>Headers</h4>
+JSON:
+<pre>
+Content-Type application/json </pre>
+XML:
+<pre>
+Content-Type application/xml</pre>
+
+<h4>Body</h4>
+JSON:
+<pre>
+{
+   "person" : "thijs",
+   "text" : "test",
+   "date"    : "10/26/16"
+}
+</pre>
+
+XML:
+```xml
+<body>
+	<person> thijs </person>
+	<text> test </text>
+	<date> 10/26/16 </date>
+</body>
+```
+<hr>
+
+
+<h3> Delete a debate by ID</h3>
+<pre>
+{url}/{tableValue}/{idValue}</pre>
+Example: http://localhost/TrumpAPI/public/api.php/debates/469
+
+
+
 
 <h2> Documentation</h2>
 <h3> URL API conventions</h3>
