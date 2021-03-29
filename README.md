@@ -194,7 +194,7 @@ Als er meerdere vragen zijn over deze API wordt er graag contact gelegd.
 </tr>
 
 <td>PUT</td>
-<td>http://localhost/TrumpAPI/public/api.php/debates/420</td>
+<td>http://localhost/TrumpAPI/public/api.php/debates/469</td>
 <td>
 <pre>
 {
