@@ -180,7 +180,7 @@ Example: http://localhost/TrumpAPI/public/api.php/debates/469
 <b> A example of a GET url: http://localhost/TrumpAPI/public/api.php/debates/69</b>
 
 <br>
-<h4> Headers for request</h4>
+<h3> Headers for request</h3>
 
 <table>
 <thead>
