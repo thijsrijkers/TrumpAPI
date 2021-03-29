@@ -2,7 +2,7 @@
 class PUT 
 {
  
-    function UpdateData($databaseName, $table, $id, $body) 
+    function UpdateData($dataType, $databaseName, $table, $id, $body) 
     {
         if($databaseName) 
         {		
@@ -16,7 +16,16 @@ class PUT
             } 
             else
             {
-                $data = json_decode($body, true);
+                if($dataType[0] == 'application/xml')
+                {
+                    $xml = simplexml_load_string($body, "SimpleXMLElement", LIBXML_NOCDATA);
+                    $json = json_encode($xml);
+                    $data = json_decode($json, true);
+                }
+                else
+                {
+                    $data = json_decode($body, true);
+                }
 
                 $sql = "UPDATE $table SET Person = '$data[person]', Text = '$data[text]', Date = '$data[date]'   WHERE ID = '$id';";
   

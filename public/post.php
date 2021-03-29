@@ -2,7 +2,7 @@
 class POST 
 {
  
-    function InsertData($databaseName, $table, $body) 
+    function InsertData($dataType, $databaseName, $table, $body) 
     {
         if($databaseName) 
         {		
@@ -16,7 +16,17 @@ class POST
             } 
             else
             {
-                $data = json_decode($body, true);
+                if($dataType[0] == 'application/xml')
+                {
+                    $xml = simplexml_load_string($body, "SimpleXMLElement", LIBXML_NOCDATA);
+                    $json = json_encode($xml);
+                    $data = json_decode($json, true);
+                }
+                else
+                {
+                    $data = json_decode($body, true);
+                }
+
                 $sql = "INSERT INTO `$table` (`ID`, `Person`, `Text`, `Date`) VALUES ('$data[id]', '$data[person]', '$data[text]', '$data[date]')";	
                 
 				$result = mysqli_query($DBConnect, $sql);  

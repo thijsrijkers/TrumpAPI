@@ -77,7 +77,7 @@ $app->put('/{table}/{idValue}', function (Request $request, Response $response)
 			require "put.php";
 
 			$put = new PUT();
-			$put->UpdateData($databaseName, $table, $id, $body);	
+			$put->UpdateData($dataType, $databaseName, $table, $id, $body);	
 		}
 	}
 
@@ -87,10 +87,10 @@ $app->put('/{table}/{idValue}', function (Request $request, Response $response)
 		$xml->loadXML($body);
 		if ($xml->schemaValidate("Schema/schema_XML_put.xsd")) 
 		{
-			require "post.php";
-		
-			$post = new POST();
-			$post->InsertData($databaseName, $table, $body);	
+			require "put.php";
+
+			$put = new PUT();
+			$put->UpdateData($dataType, $databaseName, $table, $id, $body);	
 		} 
 	}
 });
@@ -114,7 +114,7 @@ $app->post('/{table}', function (Request $request, Response $response)
 			require "post.php";
 		
 			$post = new POST();
-			$post->InsertData($databaseName, $table, $body);	
+			$post->InsertData($dataType, $databaseName, $table, $body);	
 		}
 
 	}
@@ -128,7 +128,7 @@ $app->post('/{table}', function (Request $request, Response $response)
 			require "post.php";
 		
 			$post = new POST();
-			$post->InsertData($databaseName, $table, $body);	
+			$post->InsertData($dataType, $databaseName, $table, $body);	
 		} 
 	}
 });
