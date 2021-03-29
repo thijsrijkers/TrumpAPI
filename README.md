@@ -32,6 +32,8 @@ Als er meerdere vragen zijn over deze API wordt er graag contact gelegd.
 </tbody>
 </table>
 
+<br>
+
 <h2> Documentation</h2>
 <h3> URL API conventions</h3>
 
