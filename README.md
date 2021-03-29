@@ -130,7 +130,7 @@ XML:
 <hr>
 
 
-<h3> Delete a debate by ID</h3>
+<h3> DELETE Delete a debate by ID</h3>
 <pre>
 {url}/{tableValue}/{idValue}</pre>
 Example: http://localhost/TrumpAPI/public/api.php/debates/469
