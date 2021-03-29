@@ -20,30 +20,6 @@ a API that uses datasets of the 2016  elections
 </table>
 
 <h2> Documentation</h2>
-<h3> Commit conventions</h3>
-<table>
-<thead>
-<tr>
-<th>Commit convention</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
- 
-<tr>
-<td>+</td>
-<td>A new addition to the project or a general addition</td>
-</tr>
-<tr>
-<td>+-</td>
-<td>A change in the project</td>
-</tr>
-<td>-</td>
-<td>Something is removed form the project</td>
-</tr>
-</tbody>
-</table>
-
 <h3> URL API conventions</h3>
 
 <table>
@@ -118,6 +94,30 @@ a API that uses datasets of the 2016  elections
 </tr>
 </tbody>
 </table>
+<h3> Commit conventions</h3>
+<table>
+<thead>
+<tr>
+<th>Commit convention</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+ 
+<tr>
+<td>+</td>
+<td>A new addition to the project or a general addition</td>
+</tr>
+<tr>
+<td>+-</td>
+<td>A change in the project</td>
+</tr>
+<td>-</td>
+<td>Something is removed form the project</td>
+</tr>
+</tbody>
+</table>
+
 
 <h2> Test data</h2>
 <table>
@@ -125,25 +125,46 @@ a API that uses datasets of the 2016  elections
 <tr>
 <th>CRUD action</th>
 <th>URL</th>
+<th>Body json</th>
+<th>Body xml</th>
 </tr>
 </thead>
 <tbody>
  
 <tr>
-<td>GET</td>
-<td>http://localhost/TrumpAPI/public/api.php/JSON/debate/search?q=*&id=69&persons=Holt</td>
+<td>GET with ID</td>
+<td>http://localhost/TrumpAPI/public/api.php/debates/69</td>
+<td>N.V.T</td>
+<td>N.V.T</td>
 </tr>
 <tr>
-<td>POST</td>
-<td>http://localhost/TrumpAPI/public/api.php/trumpapi/debate/469|thijs|lol|10@26@16</td>
+<td>GET without ID</td>
+<td>http://localhost/TrumpAPI/public/api.php/debates</td>
+<td>N.V.T</td>
+<td>N.V.T</td>
 </tr>
 <tr>
 <td>DELETE</td>
-<td>http://localhost/TrumpAPI/public/api.php/trumpapi/debate/ID=469|Person=thijs</td>
+<td>http://localhost/TrumpAPI/public/api.php/debates</td>
+<td>N.V.T</td>
+<td>N.V.T</td>
 </tr>
-<tr>
-<td>PUT</td>
-<td>http://localhost/TrumpAPI/public/api.php/trumpapi/debate/ID=69/Person=Holt</td>
+<td>POST</td>
+<td>http://localhost/TrumpAPI/public/api.php/Tweets/69</td>
+<td>{
+   "id": "469",
+   "person" : "thijs",
+   "text" : "test",
+   "date"    : "10/26/16"
+}</td>
+<td><body>
+	<id> 469 </id>
+	<person> thijs </person>
+	<text> test </text>
+	<date> 10/26/16 </date>
+</body></td>
 </tr>
+
+
 </tbody>
 </table>
