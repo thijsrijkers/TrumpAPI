@@ -60,7 +60,7 @@ Als er meerdere vragen zijn over deze API wordt er graag contact gelegd.
 </tr>
 <tr>
 <td>PUT</td>
-<td>{tableValue}/{idValue}/td>
+<td>{tableValue}/{idValue}</td>
 </tr>
 <tr>
 <td>POST</td>
