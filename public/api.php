@@ -67,20 +67,19 @@ $app->put('/{table}/{idValue}', function (Request $request, Response $response)
 	$body = $request->getBody();
 	$id = $request->getAttribute('idValue');
 
-	// if($dataType[0] == 'application/json')
-	// {
-	// 	$validator = new JsonSchema\Validator();
-    //     $data = json_decode($body, true);
-    //     $validator->validate($data, (object) ['$ref' => 'file://' . realpath('Schema/json_schema.json')]);
+	if($dataType[0] == 'application/json')
+	{
+		$validator = new JsonSchema\Validator();
+        $data = json_decode($body, true);
+        $validator->validate($data, (object) ['$ref' => 'file://' . realpath('Schema/json_schema.json')]);
 
-	// 	if ($validator->isValid()) {
-	// 		require "put.php";
+		if ($validator->isValid()) {
+			require "put.php";
 
-	// 		$put = new PUT();
-	// 		$put->UpdateData($databaseName, $table, $id, $body);	
-	// 	}
-
-	// }
+			$put = new PUT();
+			$put->UpdateData($databaseName, $table, $id, $body);	
+		}
+	}
 
 	if($dataType[0] == 'application/xml')
 	{
@@ -88,7 +87,10 @@ $app->put('/{table}/{idValue}', function (Request $request, Response $response)
 		$xml->loadXML($body);
 		if ($xml->schemaValidate("Schema/schema_XML_put.xsd")) 
 		{
+			require "post.php";
 		
+			$post = new POST();
+			$post->InsertData($databaseName, $table, $body);	
 		} 
 	}
 });
@@ -123,7 +125,10 @@ $app->post('/{table}', function (Request $request, Response $response)
 		$xml->loadXML($body);
 		if ($xml->schemaValidate("Schema/schema_XML_post.xsd")) 
 		{
-
+			require "post.php";
+		
+			$post = new POST();
+			$post->InsertData($databaseName, $table, $body);	
 		} 
 	}
 });
