@@ -85,12 +85,12 @@ JSON:
 XML:
 <pre>
 
-	<body>
-		<id> 469 </id>
-		<person> thijs </person>
-		<text> test </text>
-		<date> 10/26/16 </date>
-	</body>
+		<body>
+			<id> 469 </id>
+			<person> thijs </person>
+			<text> test </text>
+			<date> 10/26/16 </date>
+		</body>
 </pre>
 <hr>
 
