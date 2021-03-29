@@ -35,7 +35,7 @@ Als er meerdere vragen zijn over deze API wordt er graag contact gelegd.
 <br>
 <h2> Documentation Examples</h2>
 
-<h3< GET Get debate</h3>
+<h3> GET Get debate</h3>
 <pre>
 {url/{tableValue}</pre>
 <h4>Headers</h4>
@@ -46,7 +46,7 @@ XML:
 <pre>
 Accept application/xml</pre>
 
-<h3< GET Get debate by ID</h3>
+<h3> GET Get debate by ID</h3>
 <pre>
 {url/{tableValue}/{idValue}</pre>
 <h4>Headers</h4>
