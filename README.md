@@ -83,15 +83,14 @@ JSON:
 </pre>
 
 XML:
-<pre>
-
-	<body>
-		<id> 469 </id>
-		<person> thijs </person>
-		<text> test </text>
-		<date> 10/26/16 </date>
-	</body>
-</pre>
+```xml
+<body>
+	<id> 469 </id>
+	<person> thijs </person>
+	<text> test </text>
+	<date> 10/26/16 </date>
+</body>
+```
 <hr>
 
 <h2> Documentation</h2>
