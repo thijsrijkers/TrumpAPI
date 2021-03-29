@@ -1,3 +1,5 @@
+Header is Content-Type met value application/json of application/xml
+
 http://localhost/TrumpAPI/public/api.php/debates/69								/////get
 http://localhost/TrumpAPI/public/api.php/debates  								/////get
 
