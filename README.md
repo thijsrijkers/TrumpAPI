@@ -160,12 +160,12 @@ Als er meerdere vragen zijn over deze API wordt er graag contact gelegd.
 </tr>
 <tr>
 <td>DELETE</td>
-<td>http://localhost/TrumpAPI/public/api.php/debates</td>
+<td>http://localhost/TrumpAPI/public/api.php/Tweets/69</td>
 <td>N.V.T</td>
 <td>N.V.T</td>
 </tr>
 <td>POST</td>
-<td>http://localhost/TrumpAPI/public/api.php/Tweets/69</td>
+<td>http://localhost/TrumpAPI/public/api.php/debates</td>
 <td>
 <pre>
 {
