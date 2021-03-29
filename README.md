@@ -151,12 +151,16 @@ a API that uses datasets of the 2016  elections
 </tr>
 <td>POST</td>
 <td>http://localhost/TrumpAPI/public/api.php/Tweets/69</td>
-<td>{
+<td>
+```
+{
    "id": "469",
    "person" : "thijs",
    "text" : "test",
    "date"    : "10/26/16"
-}</td>
+}
+```
+</td>
 <td><body>
 	<id> 469 </id>
 	<person> thijs </person>
