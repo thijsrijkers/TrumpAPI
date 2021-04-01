@@ -241,23 +241,23 @@ XML POST:
 
 ```xml
 <body>
-	<id>  </id>
-	<handle>  </handle>
-	<text>  </text>
-	<retweet>  </retweet>
-	<author>  </author>
-	<time>  </time>
-	<replyscreenname>  </replyscreenname>
-	<replystatus>  </replystatus>
-	<replyuser>  </replyuser>
-	<quote>  </quote>
-	<lang>  </lang>
-	<retweetcount>  </retweetcount>
-	<favorite>  </favorite>
-	<url>  </url>
-	<truncated>  </truncated>
-	<entities>  </entities>
-	<extendedentities>  </extendedentities>
+	<id> 1 </id>
+	<handle> 1 </handle>
+	<text>  1</text>
+	<retweet> 1 </retweet>
+	<author> 1 </author>
+	<time> 1 </time>
+	<replyscreenname> 1 </replyscreenname>
+	<replystatus> 1 </replystatus>
+	<replyuser> 1 </replyuser>
+	<quote> 1 </quote>
+	<lang> 1 </lang>
+	<retweetcount> 1 </retweetcount>
+	<favorite> 1 </favorite>
+	<url> 1 </url>
+	<truncated> 1 </truncated>
+	<entities> 1 </entities>
+	<extendedentities> 1 </extendedentities>
 </body>
 ```
 
@@ -265,22 +265,22 @@ XML PUT:
 
 ```xml
 <body>
-	<handle>  </handle>
-	<text>  </text>
-	<retweet>  </retweet>
-	<author>  </author>
-	<time>  </time>
-	<replyscreenname>  </replyscreenname>
-	<replystatus>  </replystatus>
-	<replyuser>  </replyuser>
-	<quote>  </quote>
-	<lang>  </lang>
-	<retweetcount>  </retweetcount>
-	<favorite>  </favorite>
-	<url>  </url>
-	<truncated>  </truncated>
-	<entities>  </entities>
-	<extendedentities>  </extendedentities>
+	<handle> 1 </handle>
+	<text> 1 </text>
+	<retweet> 1 </retweet>
+	<author> 1 </author>
+	<time> 1 </time>
+	<replyscreenname> 1 </replyscreenname>
+	<replystatus> 1 </replystatus>
+	<replyuser>1  </replyuser>
+	<quote> 1 </quote>
+	<lang> 1 </lang>
+	<retweetcount> 1 </retweetcount>
+	<favorite> 1 </favorite>
+	<url> 1 </url>
+	<truncated> 1 </truncated>
+	<entities> 1 </entities>
+	<extendedentities> 1 </extendedentities>
 </body>
 ```
 
