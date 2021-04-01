@@ -138,6 +138,154 @@ XML:
 Example: http://localhost/TrumpAPI/public/api.php/debates/469
 
 <br><br><br>
+
+<h2> Body's of other tables</h2>
+<h3>Body of Memes</h3>
+JSON POST:
+<pre>
+{
+   "timestamp": "469",
+   "id" : "thijs",
+   "link" : "test",
+   "caption"    : "10/26/16",
+   "author"    : "10/26/16",
+   "network"    : "10/26/16",
+   "likes"    : "10/26/16"
+}
+</pre>
+JSON PUT:
+<pre>
+{
+   "timestamp": "469",
+   "link" : "test",
+   "caption"    : "10/26/16",
+   "author"    : "10/26/16",
+   "network"    : "10/26/16",
+   "likes"    : "10/26/16"
+}
+</pre>
+<br>
+XML POST:
+
+```xml
+<body>
+	<timestamp> 1 </timestamp>
+	<id> 1 </id>
+	<link> 1 </link>
+	<caption> 1 </caption>
+	<author> 1 </author>
+	<network> 1 </network>
+	<likes> 1 </likes>
+</body>
+```
+
+XML PUT:
+
+```xml
+<body>
+	<timestamp> 1 </timestamp>
+	<link> 1 </link>
+	<caption> 1 </caption>
+	<author> 1 </author>
+	<network> 1 </network>
+	<likes> 1 </likes>
+</body>
+```
+<hr>
+<h3>Body of Tweets</h3>
+JSON POST:
+<pre>
+{
+   "id" : "thijs",
+   "handle" : "test",
+   "text"    : "10/26/16",
+   "retweet"    : "10/26/16",
+   "author"    : "10/26/16",
+   "time"    : "10/26/16",
+   "replyscreenname"    : "10/26/16",
+   "replystatus"    : "10/26/16",
+   "replyuser"    : "10/26/16",
+   "quote"    : "10/26/16",
+   "lang"    : "10/26/16",
+   "retweetcount"    : "10/26/16",
+   "favorite"    : "10/26/16",
+   "url"    : "10/26/16",
+   "truncated"    : "10/26/16",
+   "entities"    : "10/26/16",
+   "extendedentities"    : "10/26/16"
+}
+</pre>
+JSON PUT:
+<pre>
+{
+   "handle" : "test",
+   "text"    : "10/26/16",
+   "retweet"    : "10/26/16",
+   "author"    : "10/26/16",
+   "time"    : "10/26/16",
+   "replyscreenname"    : "10/26/16",
+   "replystatus"    : "10/26/16",
+   "replyuser"    : "10/26/16",
+   "quote"    : "10/26/16",
+   "lang"    : "10/26/16",
+   "retweetcount"    : "10/26/16",
+   "favorite"    : "10/26/16",
+   "url"    : "10/26/16",
+   "truncated"    : "10/26/16",
+   "entities"    : "10/26/16",
+   "extendedentities"    : "10/26/16"
+}
+</pre>
+<br>
+XML POST:
+
+```xml
+<body>
+	<id>  </id>
+	<handle>  </handle>
+	<text>  </text>
+	<retweet>  </retweet>
+	<author>  </author>
+	<time>  </time>
+	<replyscreenname>  </replyscreenname>
+	<replystatus>  </replystatus>
+	<replyuser>  </replyuser>
+	<quote>  </quote>
+	<lang>  </lang>
+	<retweetcount>  </retweetcount>
+	<favorite>  </favorite>
+	<url>  </url>
+	<truncated>  </truncated>
+	<entities>  </entities>
+	<extendedentities>  </extendedentities>
+</body>
+```
+
+XML PUT:
+
+```xml
+<body>
+	<handle>  </handle>
+	<text>  </text>
+	<retweet>  </retweet>
+	<author>  </author>
+	<time>  </time>
+	<replyscreenname>  </replyscreenname>
+	<replystatus>  </replystatus>
+	<replyuser>  </replyuser>
+	<quote>  </quote>
+	<lang>  </lang>
+	<retweetcount>  </retweetcount>
+	<favorite>  </favorite>
+	<url>  </url>
+	<truncated>  </truncated>
+	<entities>  </entities>
+	<extendedentities>  </extendedentities>
+</body>
+```
+
+
+
 <h2> Documentation</h2>
 <h3> URL API conventions</h3>
 
@@ -180,63 +328,6 @@ Example: http://localhost/TrumpAPI/public/api.php/debates/469
 <b> A example of a GET url: http://localhost/TrumpAPI/public/api.php/debates/69</b>
 
 <br>
-
-<h3> Body's of other tables</h3>
-<h4>Body of Memes</h4>
-JSON POST:
-<pre>
-{
-   "timestamp": "469",
-   "id" : "thijs",
-   "link" : "test",
-   "caption"    : "10/26/16",
-   "author"    : "10/26/16",
-   "network"    : "10/26/16",
-   "likes"    : "10/26/16"
-}
-</pre>
-JSON PUT:
-<pre>
-{
-   "timestamp": "469",
-   "link" : "test",
-   "caption"    : "10/26/16",
-   "author"    : "10/26/16",
-   "network"    : "10/26/16",
-   "likes"    : "10/26/16"
-}
-</pre>
-<br>
-XML POST:
-
-```xml
-	<body>
-		<timestamp> 1 </timestamp>
-		<id> 1 </id>
-		<link> 1 </link>
-		<caption> 1 </caption>
-		<author> 1 </author>
-		<network> 1 </network>
-		<likes> 1 </likes>
-	</body>
-```
-
-XML PUT:
-
-```xml
-	<body>
-		<timestamp> 1 </timestamp>
-		<link> 1 </link>
-		<caption> 1 </caption>
-		<author> 1 </author>
-		<network> 1 </network>
-		<likes> 1 </likes>
-	</body>
-```
-<hr>
-
-
-
 <h3> Headers for request</h3>
 
 <table>
