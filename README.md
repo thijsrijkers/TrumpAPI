@@ -208,27 +208,30 @@ JSON PUT:
 </pre>
 <br>
 XML POST:
+
 ```xml
-<body>
-	<timestamp> 1 </timestamp>
-	<id> 1 </id>
-	<link> 1 </link>
-	<caption> 1 </caption>
-	<author> 1 </author>
-	<network> 1 </network>
-	<likes> 1 </likes>
-</body>
+	<body>
+		<timestamp> 1 </timestamp>
+		<id> 1 </id>
+		<link> 1 </link>
+		<caption> 1 </caption>
+		<author> 1 </author>
+		<network> 1 </network>
+		<likes> 1 </likes>
+	</body>
 ```
+
 XML PUT:
+
 ```xml
-<body>
-	<timestamp> 1 </timestamp>
-	<link> 1 </link>
-	<caption> 1 </caption>
-	<author> 1 </author>
-	<network> 1 </network>
-	<likes> 1 </likes>
-</body>
+	<body>
+		<timestamp> 1 </timestamp>
+		<link> 1 </link>
+		<caption> 1 </caption>
+		<author> 1 </author>
+		<network> 1 </network>
+		<likes> 1 </likes>
+	</body>
 ```
 <hr>
 
