@@ -81,7 +81,7 @@ JSON:
 <pre>
 {
    "id": "469",
-   "person" : "thijs",
+   "speaker" : "thijs",
    "text" : "test",
    "date"    : "10/26/16"
 }
@@ -91,7 +91,7 @@ XML:
 ```xml
 <body>
 	<id> 469 </id>
-	<person> thijs </person>
+	<speaker> thijs </speaker>
 	<text> test </text>
 	<date> 10/26/16 </date>
 </body>
@@ -115,7 +115,7 @@ Content-Type application/xml</pre>
 JSON:
 <pre>
 {
-   "person" : "Changed",
+   "speaker" : "Changed",
    "text" : "Changed",
    "date"    : "10/26/16"
 }
@@ -124,7 +124,7 @@ JSON:
 XML:
 ```xml
 <body>
-	<person> Changed </person>
+	<speaker> Changed </speaker>
 	<text> Changed </text>
 	<date> 10/26/16 </date>
 </body>
@@ -216,8 +216,63 @@ Example: http://localhost/TrumpAPI/public/api.php/debates/469
 </tr>
 </tbody>
 </table>
-
 <br>
+<h3> Body's of other tables</h3>
+<h4>Body of Memes</h4>
+JSON POST:
+<pre>
+{
+   "timestamp": "469",
+   "id" : "thijs",
+   "link" : "test",
+   "caption"    : "10/26/16",
+   "author"    : "10/26/16",
+   "network"    : "10/26/16",
+   "likes"    : "10/26/16"
+}
+</pre>
+JSON PUT:
+<pre>
+{
+   "timestamp": "469",
+   "link" : "test",
+   "caption"    : "10/26/16",
+   "author"    : "10/26/16",
+   "network"    : "10/26/16",
+   "likes"    : "10/26/16"
+}
+</pre>
+<br>
+XML POST:
+```xml
+<body>
+	<timestamp> 1 </timestamp>
+	<id> 1 </id>
+	<link> 1 </link>
+	<caption> 1 </caption>
+	<author> 1 </author>
+	<network> 1 </network>
+	<likes> 1 </likes>
+</body>
+```
+XML PUT:
+```xml
+<body>
+	<timestamp> 1 </timestamp>
+	<link> 1 </link>
+	<caption> 1 </caption>
+	<author> 1 </author>
+	<network> 1 </network>
+	<likes> 1 </likes>
+</body>
+```
+<hr>
+<br>
+
+
+
+
+
 <h3> Commit conventions</h3>
 <table>
 <thead>
