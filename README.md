@@ -180,43 +180,7 @@ Example: http://localhost/TrumpAPI/public/api.php/debates/469
 <b> A example of a GET url: http://localhost/TrumpAPI/public/api.php/debates/69</b>
 
 <br>
-<h3> Headers for request</h3>
 
-<table>
-<thead>
-<tr>
-<th>API request</th>
-<th>XML</th>
- <th>JSON</th>
-</tr>
-</thead>
-<tbody>
- 
-<tr>
-<td>GET</td>
-<td>Accept application/xml</td>
-<td>Accept application/json</td>
-</tr>
-
-<tr>
-<td>DELETE</td>
-<td>N.V.T</td>
-<td>N.V.T</td>
-</tr>
-
-<tr>
-<td>PUT</td>
-<td>Content-Type application/xml</td>
-<td>Content-Type application/json</td>
-</tr>
-<tr>
-<td>POST</td>
-<td>Content-Type application/xml</td>
-<td>Content-Type application/json</td>
-</tr>
-</tbody>
-</table>
-<br>
 <h3> Body's of other tables</h3>
 <h4>Body of Memes</h4>
 JSON POST:
@@ -267,11 +231,47 @@ XML PUT:
 </body>
 ```
 <hr>
+
+
+
+<h3> Headers for request</h3>
+
+<table>
+<thead>
+<tr>
+<th>API request</th>
+<th>XML</th>
+ <th>JSON</th>
+</tr>
+</thead>
+<tbody>
+ 
+<tr>
+<td>GET</td>
+<td>Accept application/xml</td>
+<td>Accept application/json</td>
+</tr>
+
+<tr>
+<td>DELETE</td>
+<td>N.V.T</td>
+<td>N.V.T</td>
+</tr>
+
+<tr>
+<td>PUT</td>
+<td>Content-Type application/xml</td>
+<td>Content-Type application/json</td>
+</tr>
+<tr>
+<td>POST</td>
+<td>Content-Type application/xml</td>
+<td>Content-Type application/json</td>
+</tr>
+</tbody>
+</table>
 <br>
-
-
-
-
+<br>
 
 <h3> Commit conventions</h3>
 <table>
