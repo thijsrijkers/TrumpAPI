@@ -15,6 +15,8 @@ Nu de API ook werkt, kan er naar de applicatie worden genavigeerd. Deze zal te v
 <br><br><br>
 De applicatie is een makkelijk punt om de API te gebruiken. Eerst zal de benodige crud operatie gekozen moeten worden. Hierna zal de gebruiken zijn gewenste onderwerp moeten selecteren en de bijbehorende informatie moet invullen. Als er nu lokaal gekeken word heeft de gebruiker succesvol de API gebruikt via het programma.
 <br><br><br>
+<b>LET OP! Bij de POST en PUT methoden in de applicatie staan invoervelden. Dit zijn je entry points voor je body. Bijvoorbeeld Debates heeft bij put maar 3 entry points nodig dus vul je de bovenste 3 in. De rest kan leeg blijven. Maar voor de post in Debates moet je de eerste 4 invullen </b>
+<br><br>
 Als er meerdere vragen zijn over deze API wordt er graag contact gelegd.
 <br><br>
 
