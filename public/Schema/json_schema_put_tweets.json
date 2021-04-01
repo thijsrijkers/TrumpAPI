@@ -1,0 +1,72 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "array",
+  "properties": {
+    "handle": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string"
+    },
+    "retweet": {
+      "type": "string"
+    },
+    "author": {
+      "type": "string"
+    },
+    "time": {
+      "type": "string"
+    },
+    "replyscreenname": {
+      "type": "string"
+    },
+    "replystatus": {
+      "type": "string"
+    },
+    "replyuser": {
+      "type": "string"
+    },
+    "quote": {
+      "type": "string"
+    },
+    "lang": {
+      "type": "string"
+    },
+    "retweetcount": {
+      "type": "string"
+    },
+    "favorite": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "truncated": {
+      "type": "string"
+    },
+    "entities": {
+      "type": "string"
+    },
+    "extendedentities": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "handle",
+    "text",
+    "retweet",
+    "author",
+    "time",
+    "replyscreenname",
+    "replystatus",
+    "replyuser",
+    "quote",
+    "lang",
+    "retweetcount",
+    "favorite",
+    "url",
+    "truncated",
+    "entities",
+    "extendedentities"
+  ]
+}

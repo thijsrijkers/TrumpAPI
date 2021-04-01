@@ -7,29 +7,147 @@ http://localhost/TrumpAPI/public/api.php/debates
 
 {
    "id": "469",
-   "person" : "thijs",
+   "speaker" : "thijs",
    "text" : "test",
    "date"    : "10/26/16"
 }														/////post
 
 <body>
 	<id> 1 </id>
-	<person> 1 </person>
+	<speaker> 1 </speaker>
 	<text> 1 </text>
 	<date> 1 </date>
 </body>
 
-http://localhost/TrumpAPI/public/api.php/Tweets/69								/////delete
-
-http://localhost/TrumpAPI/public/api.php/debates/420
 {
-   "person" : "thijs",
-   "text" : "test",
-   "date"    : "10/26/16"
-}														/////put
+   "timestamp": "469",
+   "id" : "thijs",
+   "link" : "test",
+   "caption"    : "10/26/16",
+   "author"    : "10/26/16",
+   "network"    : "10/26/16",
+   "likes"    : "10/26/16"
+}														
 
 <body>
-	<person> 1 </person>
+	<timestamp> 1 </timestamp>
+	<id> 1 </id>
+	<link> 1 </link>
+	<caption> 1 </caption>
+	<author> 1 </author>
+	<network> 1 </network>
+	<likes> 1 </likes>
+</body>
+
+
+{
+   "id" : "thijs",
+   "handle" : "test",
+   "text"    : "10/26/16",
+   "retweet"    : "10/26/16",
+   "author"    : "10/26/16",
+   "time"    : "10/26/16",
+   "replyscreenname"    : "10/26/16",
+   "replystatus"    : "10/26/16",
+   "replyuser"    : "10/26/16",
+   "quote"    : "10/26/16",
+   "lang"    : "10/26/16",
+   "retweetcount"    : "10/26/16",
+   "favorite"    : "10/26/16",
+   "url"    : "10/26/16",
+   "truncated"    : "10/26/16",
+   "entities"    : "10/26/16",
+   "extendedentities"    : "10/26/16"
+}														
+
+<body>
+	<id> 1 </id>
+	<handle> 1 </handle>
+	<text> 1 </text>
+	<retweet> 1 </retweet>
+	<author> 1 </author>
+	<time> 1 </time>
+	<replyscreenname> 1 </replyscreenname>
+	<replystatus> 1 </replystatus>
+	<replyuser> 1 </replyuser>
+	<quote> 1 </quote>
+	<lang> 1 </lang>
+	<retweetcount> 1 </retweetcount>
+	<favorite> 1 </favorite>
+	<url> 1 </url>
+	<truncated> 1 </truncated>
+	<entities> 1 </entities>
+	<extendedentities> 1 </extendedentities>
+</body>
+
+http://localhost/TrumpAPI/public/api.php/Tweets/69								/////delete
+
+http://localhost/TrumpAPI/public/api.php/debates/420								///PUT
+{
+   "speaker" : "thijs",
+   "text" : "test",
+   "date"    : "10/26/16"
+}													
+
+<body>
+	<speaker> 1 </speaker>
 	<text> 1 </text>
 	<date> 1 </date>
+</body>
+
+{
+   "timestamp": "469",
+   "link" : "test",
+   "caption"    : "10/26/16",
+   "author"    : "10/26/16",
+   "network"    : "10/26/16",
+   "likes"    : "10/26/16"
+}														
+
+<body>
+	<timestamp> 1 </timestamp>
+	<link> 1 </link>
+	<caption> 1 </caption>
+	<author> 1 </author>
+	<network> 1 </network>
+	<likes> 1 </likes>
+</body>
+
+
+{
+   "handle" : "test",
+   "text"    : "10/26/16",
+   "retweet"    : "10/26/16",
+   "author"    : "10/26/16",
+   "time"    : "10/26/16",
+   "replyscreenname"    : "10/26/16",
+   "replystatus"    : "10/26/16",
+   "replyuser"    : "10/26/16",
+   "quote"    : "10/26/16",
+   "lang"    : "10/26/16",
+   "retweetcount"    : "10/26/16",
+   "favorite"    : "10/26/16",
+   "url"    : "10/26/16",
+   "truncated"    : "10/26/16",
+   "entities"    : "10/26/16",
+   "extendedentities"    : "10/26/16"
+}														
+
+<body>
+	<handle> 1 </handle>
+	<text> 1 </text>
+	<retweet> 1 </retweet>
+	<author> 1 </author>
+	<time> 1 </time>
+	<replyscreenname> 1 </replyscreenname>
+	<replystatus> 1 </replystatus>
+	<replyuser> 1 </replyuser>
+	<quote> 1 </quote>
+	<lang> 1 </lang>
+	<retweetcount> 1 </retweetcount>
+	<favorite> 1 </favorite>
+	<url> 1 </url>
+	<truncated> 1 </truncated>
+	<entities> 1 </entities>
+	<extendedentities> 1 </extendedentities>
 </body>

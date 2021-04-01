@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="body">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="handle"/>
+        <xs:element ref="text"/>
+        <xs:element ref="retweet"/>
+        <xs:element ref="author"/>
+        <xs:element ref="time"/>
+        <xs:element ref="replyscreenname"/>
+        <xs:element ref="replystatus"/>
+        <xs:element ref="replyuser"/>
+        <xs:element ref="quote"/>
+        <xs:element ref="lang"/>
+        <xs:element ref="retweetcount"/>
+        <xs:element ref="favorite"/>
+        <xs:element ref="url"/>
+        <xs:element ref="truncated"/>
+        <xs:element ref="entities"/>
+        <xs:element ref="extendedentities"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="handle" type="xs:integer"/>
+  <xs:element name="text" type="xs:integer"/>
+  <xs:element name="retweet" type="xs:integer"/>
+  <xs:element name="author" type="xs:integer"/>
+  <xs:element name="time" type="xs:integer"/>
+  <xs:element name="replyscreenname" type="xs:integer"/>
+  <xs:element name="replystatus" type="xs:integer"/>
+  <xs:element name="replyuser" type="xs:integer"/>
+  <xs:element name="quote" type="xs:integer"/>
+  <xs:element name="lang" type="xs:integer"/>
+  <xs:element name="retweetcount" type="xs:integer"/>
+  <xs:element name="favorite" type="xs:integer"/>
+  <xs:element name="url" type="xs:integer"/>
+  <xs:element name="truncated" type="xs:integer"/>
+  <xs:element name="entities" type="xs:integer"/>
+  <xs:element name="extendedentities" type="xs:integer"/>
+</xs:schema>
+

@@ -71,21 +71,21 @@ $app->put('/{table}/{idValue}', function (Request $request, Response $response)
 	{
 		$validator = new JsonSchema\Validator();
         $data = json_decode($body, true);
-        $validator->validate($data, (object) ['$ref' => 'file://' . realpath('Schema/json_schema.json')]);
+        $validator->validate($data, (object) ['$ref' => 'file://' . realpath("Schema/json_schema_put_$table.json")]);
 
 		if ($validator->isValid()) {
 			require "put.php";
 
 			$put = new PUT();
 			$put->UpdateData($dataType, $databaseName, $table, $id, $body);	
-		}
+	 	}
 	}
 
 	if($dataType[0] == 'application/xml')
 	{
 		$xml = new DOMDocument('1.0', 'iso-8859-1');
 		$xml->loadXML($body);
-		if ($xml->schemaValidate("Schema/schema_XML_put.xsd")) 
+		if ($xml->schemaValidate("Schema/schema_XML_put_$table.xsd")) 
 		{
 			require "put.php";
 
@@ -108,13 +108,13 @@ $app->post('/{table}', function (Request $request, Response $response)
 	{
 		$validator = new JsonSchema\Validator();
         $data = json_decode($body, true);
-        $validator->validate($data, (object) ['$ref' => 'file://' . realpath('Schema/json_schema.json')]);
+        $validator->validate($data, (object) ['$ref' => 'file://' . realpath("Schema/json_schema_post_$table.json")]);
 
 		if ($validator->isValid()) {
-			require "post.php";
+		 	require "post.php";
 		
-			$post = new POST();
-			$post->InsertData($dataType, $databaseName, $table, $body);	
+		 	$post = new POST();
+		 	$post->InsertData($dataType, $databaseName, $table, $body);	
 		}
 
 	}
@@ -123,7 +123,7 @@ $app->post('/{table}', function (Request $request, Response $response)
 	{
 		$xml = new DOMDocument('1.0', 'iso-8859-1');
 		$xml->loadXML($body);
-		if ($xml->schemaValidate("Schema/schema_XML_post.xsd")) 
+		if ($xml->schemaValidate("Schema/schema_XML_post_$table.xsd")) 
 		{
 			require "post.php";
 		

@@ -27,7 +27,23 @@ class PUT
                     $data = json_decode($body, true);
                 }
 
-                $sql = "UPDATE $table SET Person = '$data[person]', Text = '$data[text]', Date = '$data[date]'   WHERE ID = '$id';";
+                $sql ="";
+
+                if($table == "debates")
+                {
+                    $sql = "UPDATE $table SET Speaker = '$data[speaker]', Text = '$data[text]', Date = '$data[date]'   WHERE ID = '$id';";
+                }
+
+                if($table == "memes")
+                {
+                    $sql = "UPDATE $table SET `Timestamp` =  '$data[timestamp]', `Link` = '$data[link]', `Caption` = '$data[caption]', `Author`  = '$data[author]', `Network`  = '$data[network]', `Likes`  = '$data[likes]'   WHERE ID = '$id';";
+                }
+
+                if($table == "tweets")
+                {
+                    $sql = "UPDATE $table SET `Handle` =  '$data[handle]', `Text` =  '$data[text]', `Retweet` =  '$data[retweet]', `Author` =  '$data[author]', `Time` =  '$data[time]', `ReplyScreenName` =  '$data[replyscreenname]', `ReplyStatus` =  '$data[replystatus]', `ReplyUser` =  '$data[replyuser]', `Quote` =  '$data[quote]', `Lang` =  '$data[lang]', `RetweetCount` =  '$data[retweetcount]', `Favorite` =  '$data[favorite]', `URL` =  '$data[url]', `Truncated` =  '$data[truncated]', `Entities` =  '$data[entities]', `ExtendedEntities` =  '$data[extendedentities]'   WHERE ID = '$id';";
+                }
+            
   
                 $result = mysqli_query($DBConnect, $sql);  
     

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="body">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="timestamp"/>
+        <xs:element ref="id"/>
+        <xs:element ref="link"/>
+        <xs:element ref="caption"/>
+        <xs:element ref="author"/>
+        <xs:element ref="network"/>
+        <xs:element ref="likes"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="timestamp" type="xs:integer"/>
+  <xs:element name="id" type="xs:integer"/>
+  <xs:element name="link" type="xs:integer"/>
+  <xs:element name="caption" type="xs:integer"/>
+  <xs:element name="author" type="xs:integer"/>
+  <xs:element name="network" type="xs:integer"/>
+  <xs:element name="likes" type="xs:integer"/>
+</xs:schema>

@@ -26,8 +26,22 @@ class POST
                 {
                     $data = json_decode($body, true);
                 }
+                $sql ="";
 
-                $sql = "INSERT INTO `$table` (`ID`, `Person`, `Text`, `Date`) VALUES ('$data[id]', '$data[person]', '$data[text]', '$data[date]')";	
+                if($table == "debates")
+                {
+                    $sql = "INSERT INTO `$table` (`ID`, `Speaker`, `Text`, `Date`) VALUES ('$data[id]', '$data[speaker]', '$data[text]', '$data[date]')";	
+                }
+
+                if($table == "memes")
+                {
+                    $sql = "INSERT INTO `$table` (`Timestamp`, `ID`, `Link`, `Caption`, `Author`, `Network`, `Likes`) VALUES ('$data[timestamp]', '$data[id]', '$data[link]', '$data[caption]', '$data[author]', '$data[network]', '$data[likes]')";	
+                }
+
+                if($table == "tweets")
+                {
+                    $sql = "INSERT INTO `$table` (`ID`, `Handle`, `Text`, `Retweet`, `Author`, `Time`, `ReplyScreenName`, `ReplyStatus`, `ReplyUser`, `Quote`, `Lang`, `RetweetCount`, `Favorite`, `URL`, `Truncated`, `Entities`, `ExtendedEntities`) VALUES ('$data[id]', '$data[handle]', '$data[text]', '$data[retweet]', '$data[author]', '$data[time]', '$data[replyscreenname]', '$data[replystatus]', '$data[replyuser]', '$data[quote]', '$data[lang]', '$data[retweetcount]', '$data[favorite]', '$data[url]', '$data[truncated]', '$data[entities]', '$data[extendedentities]')";	
+                }
                 
 				$result = mysqli_query($DBConnect, $sql);  
                 

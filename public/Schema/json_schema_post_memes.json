@@ -1,0 +1,36 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "array",
+      "properties": {
+        "Timestamp": {
+          "type": "string"
+        },
+        "ID": {
+          "type": "string"
+        },
+        "Link": {
+          "type": "string"
+        },
+        "Caption": {
+          "type": "string"
+        },
+        "Author": {
+          "type": "string"
+        },
+        "Network": {
+          "type": "string"
+        },
+        "Likes": {
+          "type": "string"
+        }
+    },
+    "required": [
+      "timestamp",
+      "id",
+      "link",
+      "caption",
+      "author",
+      "network",
+      "likes"
+    ]
+}
